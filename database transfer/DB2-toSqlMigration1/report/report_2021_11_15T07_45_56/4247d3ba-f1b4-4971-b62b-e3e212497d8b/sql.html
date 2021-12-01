@@ -1,0 +1,106 @@
+<html>
+<head>
+<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge' />
+<link rel=stylesheet data-name='vs/editor/editor.main' href='../monaco/editor.main.css' type='text/css'>
+<link rel='stylesheet' type='text/css' href='../css/style.css'></link>
+<script type='text/javascript' src='../js/functions.js'></script>
+<script async='async' type='text/javascript' src='../monaco/sql.js'></script>
+<script src='../monaco/loader.js'></script>
+<script src='../monaco/editor.main.nls.js'></script>
+<script src='../monaco/editor.main.js'></script>
+</head>
+<body class='sql-body' id='scrollable-body'>
+<div id='left-side' class='left-side'><div class='panel'>
+<span class='panel-title source'>&nbsp;Source</span>
+<img tabindex='0' aria-label='Previous problem' role='button' class='nav-button nav-button-disabled' id='source_previous_problem' src='../img/previous_problem.gif' onclick='handleProblemButtonClick(-1, true)' title='Previous problem' />
+<img tabindex='0' aria-label='Next problem' role='button' class='nav-button nav-button-disabled' id='source_next_problem' src='../img/next_problem.gif' onclick='handleProblemButtonClick(1, true)' title='Next problem' />
+<img tabindex='0' aria-label='Previous bookmark' role='button' class='nav-button nav-button-disabled' id='source_previous_bookmark' src='../img/previous_bookmark.gif' onclick='handleBookmarkButtonClick(-1, true)' title='Previous bookmark' />
+<img tabindex='0' aria-label='Next bookmark' role='button' class='nav-button nav-button-disabled' id='source_next_bookmark' src='../img/next_bookmark.gif' onclick='handleBookmarkButtonClick(1, true)' title='Next bookmark' />
+<img tabindex='0' aria-label='Clear bookmarks' role='button' class='nav-button nav-button-disabled' id='source_clear_bookmarks' src='../img/clear_bookmarks.gif' onclick='handleBookmarkButtonClick(0, true)' title='Clear bookmarks' />
+<a class='raw-source-link' target='_blank' aria-label='Raw source' href='./src.sql.txt');'>Raw source</a>
+</div>
+<div class='editor-container'>
+<div id='monaco-left-side'></div><pre id='monaco-left-side-sql'>
+CREATE 
+	VIEW LDATATST.TRW_CHANGE_VIEW (TRWC_ID, TRWC_CREATED_TIMESTAMP, TRWC_CREATED_BY, TRWC_UPDATED_TIMESTAMP, TRWC_UPDATED_BY, TRWC_STATUS, TRWC_TYPE, TRWC_LOAN, TRWC_SEQ, TRWC_FIELD, TRWC_VALUE, TRWC_EFFDTE, TRWC_EXPDTE)
+		AS 
+			SELECT 
+				TID, 
+				TCREATEDTS, 
+				TCREATEDBY, 
+				TUPDATEDTS, 
+				TUPDATEDBY, 
+				TSTATUS, 
+				TTYPE, 
+				TLOAN, 
+				TSEQ, 
+				TFIELD, 
+				TVALUE, 
+				TEFFDTE, 
+				TEXPDTE
+			FROM LDATATST.TRWCHG;</pre></div></div><div id='resize-bar' class='resize-bar'></div><div id='right-side' class='right-side'><div class='panel'>
+<span class='panel-title target'>&nbsp;Target</span>
+<img tabindex='0' aria-label='Previous problem' role='button' class='nav-button nav-button-disabled' id='target_previous_problem' src='../img/previous_problem.gif' onclick='handleProblemButtonClick(-1, false)' title='Previous problem' />
+<img tabindex='0' aria-label='Next problem' role='button' class='nav-button nav-button-disabled' id='target_next_problem' src='../img/next_problem.gif' onclick='handleProblemButtonClick(1, false)' title='Next problem' />
+<img tabindex='0' aria-label='Previous bookmark' role='button' class='nav-button nav-button-disabled' id='target_previous_bookmark' src='../img/previous_bookmark.gif' onclick='handleBookmarkButtonClick(-1, false)' title='Previous bookmark' />
+<img tabindex='0' aria-label='Next bookmark' role='button' class='nav-button nav-button-disabled' id='target_next_bookmark' src='../img/next_bookmark.gif' onclick='handleBookmarkButtonClick(1, false)' title='Next bookmark' />
+<img tabindex='0' aria-label='Clear bookmarks' role='button' class='nav-button nav-button-disabled' id='target_clear_bookmarks' src='../img/clear_bookmarks.gif' onclick='handleBookmarkButtonClick(0, false)' title='Clear bookmarks' />
+</div>
+<div class='editor-container'>
+<div id='monaco-right-side'></div><pre id='monaco-right-side-sql'>
+/* 
+*   SSMA error messages:
+*   DB22SS0083: Identifier TID cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier TCREATEDTS cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier TCREATEDBY cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier TUPDATEDTS cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier TUPDATEDBY cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier TSTATUS cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier TTYPE cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier TLOAN cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier TSEQ cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier TFIELD cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier TVALUE cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier TEFFDTE cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier TEXPDTE cannot be converted because it was not resolved.
+
+CREATE VIEW LDATATST.TRW_CHANGE_VIEW (
+	TRWC_ID, 
+	TRWC_CREATED_TIMESTAMP, 
+	TRWC_CREATED_BY, 
+	TRWC_UPDATED_TIMESTAMP, 
+	TRWC_UPDATED_BY, 
+	TRWC_STATUS, 
+	TRWC_TYPE, 
+	TRWC_LOAN, 
+	TRWC_SEQ, 
+	TRWC_FIELD, 
+	TRWC_VALUE, 
+	TRWC_EFFDTE, 
+	TRWC_EXPDTE)
+AS 
+	SELECT 
+		TID, 
+		TCREATEDTS, 
+		TCREATEDBY, 
+		TUPDATEDTS, 
+		TUPDATEDBY, 
+		TSTATUS, 
+		TTYPE, 
+		TLOAN, 
+		TSEQ, 
+		TFIELD, 
+		TVALUE, 
+		TEFFDTE, 
+		TEXPDTE
+	FROM LDATATST.TRWCHG
+GO
+*/
+
+</pre></div></div><script>
+var sourceLanguage = 'sql';
+var sourceEditorSelections = [{start:232, end:446, guid:'ea10a3ae-8db2-47ad-87af-8c8b5b795cb4', reflection:['fbd2a461-01c3-46c9-b10f-eba2108bcc50'], convmessInfoIds:[], convmessWarningIds:[], convmessErrorIds:[]},{start:0, end:447, guid:'a422c314-ef35-4880-8820-5c91e769db36', reflection:['8cf1de6f-c9f7-486d-b2c2-fc9a7bda59a8'], convmessInfoIds:[], convmessWarningIds:[], convmessErrorIds:[]}];
+var targetLanguage = 'sql';
+var targetEditorSelections = [{start:1375, end:1559, guid:'fbd2a461-01c3-46c9-b10f-eba2108bcc50', reflection:['ea10a3ae-8db2-47ad-87af-8c8b5b795cb4'], convmessInfoIds:[], convmessWarningIds:[], convmessErrorIds:[]},{start:1121, end:1559, guid:'8cf1de6f-c9f7-486d-b2c2-fc9a7bda59a8', reflection:['a422c314-ef35-4880-8820-5c91e769db36'], convmessInfoIds:[], convmessWarningIds:[], convmessErrorIds:[]},{start:0, end:1567, guid:'7e43f739-a6ab-4276-94e5-e6b66e786045', reflection:[], convmessInfoIds:[], convmessWarningIds:[], convmessErrorIds:['DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083']}];
+</script><script src='../js/code.js'></script></body></html>

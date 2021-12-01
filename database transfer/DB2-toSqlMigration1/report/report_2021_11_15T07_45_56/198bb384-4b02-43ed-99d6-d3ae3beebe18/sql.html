@@ -1,0 +1,450 @@
+<html>
+<head>
+<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge' />
+<link rel=stylesheet data-name='vs/editor/editor.main' href='../monaco/editor.main.css' type='text/css'>
+<link rel='stylesheet' type='text/css' href='../css/style.css'></link>
+<script type='text/javascript' src='../js/functions.js'></script>
+<script async='async' type='text/javascript' src='../monaco/sql.js'></script>
+<script src='../monaco/loader.js'></script>
+<script src='../monaco/editor.main.nls.js'></script>
+<script src='../monaco/editor.main.js'></script>
+</head>
+<body class='sql-body' id='scrollable-body'>
+<div id='left-side' class='left-side'><div class='panel'>
+<span class='panel-title source'>&nbsp;Source</span>
+<img tabindex='0' aria-label='Previous problem' role='button' class='nav-button nav-button-disabled' id='source_previous_problem' src='../img/previous_problem.gif' onclick='handleProblemButtonClick(-1, true)' title='Previous problem' />
+<img tabindex='0' aria-label='Next problem' role='button' class='nav-button nav-button-disabled' id='source_next_problem' src='../img/next_problem.gif' onclick='handleProblemButtonClick(1, true)' title='Next problem' />
+<img tabindex='0' aria-label='Previous bookmark' role='button' class='nav-button nav-button-disabled' id='source_previous_bookmark' src='../img/previous_bookmark.gif' onclick='handleBookmarkButtonClick(-1, true)' title='Previous bookmark' />
+<img tabindex='0' aria-label='Next bookmark' role='button' class='nav-button nav-button-disabled' id='source_next_bookmark' src='../img/next_bookmark.gif' onclick='handleBookmarkButtonClick(1, true)' title='Next bookmark' />
+<img tabindex='0' aria-label='Clear bookmarks' role='button' class='nav-button nav-button-disabled' id='source_clear_bookmarks' src='../img/clear_bookmarks.gif' onclick='handleBookmarkButtonClick(0, true)' title='Clear bookmarks' />
+<a class='raw-source-link' target='_blank' aria-label='Raw source' href='./src.sql.txt');'>Raw source</a>
+</div>
+<div class='editor-container'>
+<div id='monaco-left-side'></div><pre id='monaco-left-side-sql'>
+CREATE 
+	VIEW LDATATST.NLSPSERV_VIEW (PS_PK_ID, PS_CREATED_TIMESTAMP, PS_CREATED_BY, PS_UPDATED_TIMESTAMP, PS_UPDATED_BY, PS_TYPE, PS_STATUS, PS_AFFL_CODE, PS_SERV_ID, PS_LSAMS_NUMBER, PS_PREV_SERV_LOAN_NO, PS_FNMA_LOAN_NO, PS_FHLMC_LOAN_NO, PS_GNMA_LOAN_NO, PS_IRS_REPORTING_YR, PS_FIRST_NAME, PS_MIDDLE_NAME, PS_LAST_NAME, PS_SUFFIX, PS_MIDDLE_INIT, PS_MAILING_ADDR1, PS_MAILING_ADDR2, PS_MAILING_CITY, PS_MAILING_STATE, PS_MAILING_ZIP, PS_TIN_NO, PS_TIN_TYPE, PS_PROPERTY_ADDR1, PS_PROPERTY_ADDR2, PS_PROPERTY_CITY, PS_PROPERTY_ZIP, PS_PROPERTY_LEGAL_DESC, PS_LOAN_CLOSING_DATE, PS_BEGIN_PRIN_BAL, PS_ENDING_PRIN_BAL, PS_INTEREST_PAID, PS_LATE_CHARGES_PAID, PS_TOTAL_1098_INT, PS_POINTS_PAID, PS_TAXES_PAID, PS_MI_INSUR_PREM_PAID, PS_REIMB_INT, PS_MAIL_ADDR_SAME, PS_1098_ORIG_RPRTD_IRS_FL, PS_1098_ORIG_RPRTD_IRS_DT, PS_1098_CORR_RPRTD_IRS_FL, PS_1098_CORR_RPRTD_IRS_DT, PS_1098_ORIG_RPRTD_ST_FLG, PS_1098_ORIG_RPRTD_STAT_DT, PS_1098_CORR_RPRTD_ST_FLG, PS_1098_CORR_RPRTD_STAT_DT, PS_INTEREST_ESCROW_PAID, PS_FED_INC_TAX_WITHHELD, PS_STATE_TAX_WITHHELD, PS_TIMES_TIN_NOTE_SENT, PS_1099_INT_ORIG_RPT_IRSFL, PS_1099_INT_ORIG_RPT_IRSDT, PS_1099_INT_CORR_RPT_IRSFL, PS_1099_INT_CORR_RPT_IRSDT, PS_1099_INT_ORIG_RPT_ST_FL, PS_1099_INT_ORIG_RPT_STDT, PS_1099_INT_CORR_RPT_ST_FL, PS_1099_INT_CORR_RPT_STDT, PS_1099A_ACQUISITION_DT, PS_1099A_PRINCIPAL_OUT, PS_FAIR_MARKET_VALUE, PS_BORR_LIABLE, PS_1099A_ORIG_RPT_IRSFL, PS_1099A_ORIG_RPT_IRSDT, PS_1099A_CORR_RPT_IRSFL, PS_1099A_CORR_RPT_IRSDT, PS_1099A_ORIG_RPT_ST_FL, PS_1099A_ORIG_RPT_STDT, PS_1099A_CORR_RPT_ST_FL, PS_1099A_CORR_RPT_STDT, PS_1099C_CANCEL_DT, PS_1099C_PRINCIPAL, PS_1099C_INTEREST, PS_1099C_PENALTIES, PS_1099C_TOTAL, PS_1099C_ORIG_RPT_IRSFL, PS_1099C_ORIG_RPT_IRSDT, PS_1099C_CORR_RPT_IRSFL, PS_1099C_CORR_RPT_IRSDT, PS_1099C_ORIG_RPT_ST_FL, PS_1099C_ORIG_RPT_STDT, PS_1099C_CORR_RPT_ST_FL, PS_1099C_CORR_RPT_STDT, PS_1099M_OTHER_INCOME, PS_1099M_NON_EMP_COMP, PS_1099M_FED_INTAX_WITHHLD, PS_1099M_ORIG_RPT_IRSFL, PS_1099M_ORIG_RPT_IRSDT, PS_1099M_CORR_RPT_IRSFL, PS_1099M_CORR_RPT_IRSDT, PS_1099M_ORIG_RPT_ST_FL, PS_1099M_ORIG_RPT_STDT, PS_1099M_CORR_RPT_ST_FL, PS_1099M_CORR_RPT_STDT)
+		AS 
+			SELECT 
+				ID, 
+				CREATEDTS, 
+				CREATEDBY, 
+				UPDATEDTS, 
+				UPDATEDBY, 
+				PROCESS, 
+				PSSTATUS, 
+				PSAFCD, 
+				PSSERVID, 
+				PSLSLOAN, 
+				PSPRSVLN, 
+				PSFNMALN, 
+				PSFHLMLN, 
+				PSGMLN, 
+				PSIRSYR, 
+				PSFNAM, 
+				PSMNAM, 
+				PSLNAM, 
+				PSSUFF, 
+				PSMINIT, 
+				PSMADD1, 
+				PSMADD2, 
+				PSMCITY, 
+				PSMSTATE, 
+				PSMZIP, 
+				PSTINNO, 
+				PSTINTYP, 
+				PSPADD1, 
+				PSPADD2, 
+				PSPCITY, 
+				PSPZIP, 
+				PSPLGL, 
+				PSLNCLDT, 
+				PSBGPBAL, 
+				PSEDPBAL, 
+				PS98INPD, 
+				PS98LCPD, 
+				PS98TOIN, 
+				PSPTSPD, 
+				PSTXPAID, 
+				PSMIPAID, 
+				PSREINT, 
+				PSADDFLG, 
+				PS98IRSOFL, 
+				PS98IRSODT, 
+				PS98IRSCFL, 
+				PS98IRSCDT, 
+				PS98STOFL, 
+				PS98STODT, 
+				PS98STCFL, 
+				PS98STCDT, 
+				PS99IPD, 
+				PS99ITW, 
+				PS99ISTW, 
+				PS99ITN, 
+				PS99IRSOFL, 
+				PS99IRSODT, 
+				PS99IRSCFL, 
+				PS99IRSCDT, 
+				PS99ISTOFL, 
+				PS99ISTODT, 
+				PS99ISTCFL, 
+				PS99ISTCDT, 
+				PS99AACQDT, 
+				PS99APRO, 
+				PSFAIRMV, 
+				PSBLIABLE, 
+				PS1099AOFL, 
+				PS1099AODT, 
+				PS1099ACFL, 
+				PS1099ACDT, 
+				PS99ASTOFL, 
+				PS99ASTODT, 
+				PS99ASTCFL, 
+				PS99ASTCDT, 
+				PS99CCDT, 
+				PS99CPRIN, 
+				PS99CINT, 
+				PS99CPEN, 
+				PS99CTOT, 
+				PS1099COFL, 
+				PS1099CODT, 
+				PS1099CCFL, 
+				PS1099CCDT, 
+				PS99CSTOFL, 
+				PS99CSTODT, 
+				PS99CSTCFL, 
+				PS99CSTCDT, 
+				PS99MOTH, 
+				PS99MNEC, 
+				PS99MTWHD, 
+				PS1099MOFL, 
+				PS1099MODT, 
+				PS1099MCFL, 
+				PS1099MCDT, 
+				PS99MSTOFL, 
+				PS99MSTODT, 
+				PS99MSTCFL, 
+				PS99MSTCDT
+			FROM LDATATST.NLSPSERV;</pre></div></div><div id='resize-bar' class='resize-bar'></div><div id='right-side' class='right-side'><div class='panel'>
+<span class='panel-title target'>&nbsp;Target</span>
+<img tabindex='0' aria-label='Previous problem' role='button' class='nav-button nav-button-disabled' id='target_previous_problem' src='../img/previous_problem.gif' onclick='handleProblemButtonClick(-1, false)' title='Previous problem' />
+<img tabindex='0' aria-label='Next problem' role='button' class='nav-button nav-button-disabled' id='target_next_problem' src='../img/next_problem.gif' onclick='handleProblemButtonClick(1, false)' title='Next problem' />
+<img tabindex='0' aria-label='Previous bookmark' role='button' class='nav-button nav-button-disabled' id='target_previous_bookmark' src='../img/previous_bookmark.gif' onclick='handleBookmarkButtonClick(-1, false)' title='Previous bookmark' />
+<img tabindex='0' aria-label='Next bookmark' role='button' class='nav-button nav-button-disabled' id='target_next_bookmark' src='../img/next_bookmark.gif' onclick='handleBookmarkButtonClick(1, false)' title='Next bookmark' />
+<img tabindex='0' aria-label='Clear bookmarks' role='button' class='nav-button nav-button-disabled' id='target_clear_bookmarks' src='../img/clear_bookmarks.gif' onclick='handleBookmarkButtonClick(0, false)' title='Clear bookmarks' />
+</div>
+<div class='editor-container'>
+<div id='monaco-right-side'></div><pre id='monaco-right-side-sql'>
+/* 
+*   SSMA error messages:
+*   DB22SS0083: Identifier ID cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier CREATEDTS cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier CREATEDBY cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier UPDATEDTS cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier UPDATEDBY cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PROCESS cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PSSTATUS cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PSAFCD cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PSSERVID cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PSLSLOAN cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PSPRSVLN cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PSFNMALN cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PSFHLMLN cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PSGMLN cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PSIRSYR cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PSFNAM cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PSMNAM cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PSLNAM cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PSSUFF cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PSMINIT cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PSMADD1 cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PSMADD2 cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PSMCITY cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PSMSTATE cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PSMZIP cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PSTINNO cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PSTINTYP cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PSPADD1 cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PSPADD2 cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PSPCITY cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PSPZIP cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PSPLGL cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PSLNCLDT cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PSBGPBAL cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PSEDPBAL cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PS98INPD cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PS98LCPD cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PS98TOIN cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PSPTSPD cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PSTXPAID cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PSMIPAID cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PSREINT cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PSADDFLG cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PS98IRSOFL cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PS98IRSODT cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PS98IRSCFL cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PS98IRSCDT cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PS98STOFL cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PS98STODT cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PS98STCFL cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PS98STCDT cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PS99IPD cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PS99ITW cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PS99ISTW cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PS99ITN cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PS99IRSOFL cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PS99IRSODT cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PS99IRSCFL cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PS99IRSCDT cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PS99ISTOFL cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PS99ISTODT cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PS99ISTCFL cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PS99ISTCDT cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PS99AACQDT cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PS99APRO cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PSFAIRMV cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PSBLIABLE cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PS1099AOFL cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PS1099AODT cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PS1099ACFL cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PS1099ACDT cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PS99ASTOFL cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PS99ASTODT cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PS99ASTCFL cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PS99ASTCDT cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PS99CCDT cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PS99CPRIN cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PS99CINT cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PS99CPEN cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PS99CTOT cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PS1099COFL cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PS1099CODT cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PS1099CCFL cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PS1099CCDT cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PS99CSTOFL cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PS99CSTODT cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PS99CSTCFL cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PS99CSTCDT cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PS99MOTH cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PS99MNEC cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PS99MTWHD cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PS1099MOFL cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PS1099MODT cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PS1099MCFL cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PS1099MCDT cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PS99MSTOFL cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PS99MSTODT cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PS99MSTCFL cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PS99MSTCDT cannot be converted because it was not resolved.
+
+CREATE VIEW LDATATST.NLSPSERV_VIEW (
+	PS_PK_ID, 
+	PS_CREATED_TIMESTAMP, 
+	PS_CREATED_BY, 
+	PS_UPDATED_TIMESTAMP, 
+	PS_UPDATED_BY, 
+	PS_TYPE, 
+	PS_STATUS, 
+	PS_AFFL_CODE, 
+	PS_SERV_ID, 
+	PS_LSAMS_NUMBER, 
+	PS_PREV_SERV_LOAN_NO, 
+	PS_FNMA_LOAN_NO, 
+	PS_FHLMC_LOAN_NO, 
+	PS_GNMA_LOAN_NO, 
+	PS_IRS_REPORTING_YR, 
+	PS_FIRST_NAME, 
+	PS_MIDDLE_NAME, 
+	PS_LAST_NAME, 
+	PS_SUFFIX, 
+	PS_MIDDLE_INIT, 
+	PS_MAILING_ADDR1, 
+	PS_MAILING_ADDR2, 
+	PS_MAILING_CITY, 
+	PS_MAILING_STATE, 
+	PS_MAILING_ZIP, 
+	PS_TIN_NO, 
+	PS_TIN_TYPE, 
+	PS_PROPERTY_ADDR1, 
+	PS_PROPERTY_ADDR2, 
+	PS_PROPERTY_CITY, 
+	PS_PROPERTY_ZIP, 
+	PS_PROPERTY_LEGAL_DESC, 
+	PS_LOAN_CLOSING_DATE, 
+	PS_BEGIN_PRIN_BAL, 
+	PS_ENDING_PRIN_BAL, 
+	PS_INTEREST_PAID, 
+	PS_LATE_CHARGES_PAID, 
+	PS_TOTAL_1098_INT, 
+	PS_POINTS_PAID, 
+	PS_TAXES_PAID, 
+	PS_MI_INSUR_PREM_PAID, 
+	PS_REIMB_INT, 
+	PS_MAIL_ADDR_SAME, 
+	PS_1098_ORIG_RPRTD_IRS_FL, 
+	PS_1098_ORIG_RPRTD_IRS_DT, 
+	PS_1098_CORR_RPRTD_IRS_FL, 
+	PS_1098_CORR_RPRTD_IRS_DT, 
+	PS_1098_ORIG_RPRTD_ST_FLG, 
+	PS_1098_ORIG_RPRTD_STAT_DT, 
+	PS_1098_CORR_RPRTD_ST_FLG, 
+	PS_1098_CORR_RPRTD_STAT_DT, 
+	PS_INTEREST_ESCROW_PAID, 
+	PS_FED_INC_TAX_WITHHELD, 
+	PS_STATE_TAX_WITHHELD, 
+	PS_TIMES_TIN_NOTE_SENT, 
+	PS_1099_INT_ORIG_RPT_IRSFL, 
+	PS_1099_INT_ORIG_RPT_IRSDT, 
+	PS_1099_INT_CORR_RPT_IRSFL, 
+	PS_1099_INT_CORR_RPT_IRSDT, 
+	PS_1099_INT_ORIG_RPT_ST_FL, 
+	PS_1099_INT_ORIG_RPT_STDT, 
+	PS_1099_INT_CORR_RPT_ST_FL, 
+	PS_1099_INT_CORR_RPT_STDT, 
+	PS_1099A_ACQUISITION_DT, 
+	PS_1099A_PRINCIPAL_OUT, 
+	PS_FAIR_MARKET_VALUE, 
+	PS_BORR_LIABLE, 
+	PS_1099A_ORIG_RPT_IRSFL, 
+	PS_1099A_ORIG_RPT_IRSDT, 
+	PS_1099A_CORR_RPT_IRSFL, 
+	PS_1099A_CORR_RPT_IRSDT, 
+	PS_1099A_ORIG_RPT_ST_FL, 
+	PS_1099A_ORIG_RPT_STDT, 
+	PS_1099A_CORR_RPT_ST_FL, 
+	PS_1099A_CORR_RPT_STDT, 
+	PS_1099C_CANCEL_DT, 
+	PS_1099C_PRINCIPAL, 
+	PS_1099C_INTEREST, 
+	PS_1099C_PENALTIES, 
+	PS_1099C_TOTAL, 
+	PS_1099C_ORIG_RPT_IRSFL, 
+	PS_1099C_ORIG_RPT_IRSDT, 
+	PS_1099C_CORR_RPT_IRSFL, 
+	PS_1099C_CORR_RPT_IRSDT, 
+	PS_1099C_ORIG_RPT_ST_FL, 
+	PS_1099C_ORIG_RPT_STDT, 
+	PS_1099C_CORR_RPT_ST_FL, 
+	PS_1099C_CORR_RPT_STDT, 
+	PS_1099M_OTHER_INCOME, 
+	PS_1099M_NON_EMP_COMP, 
+	PS_1099M_FED_INTAX_WITHHLD, 
+	PS_1099M_ORIG_RPT_IRSFL, 
+	PS_1099M_ORIG_RPT_IRSDT, 
+	PS_1099M_CORR_RPT_IRSFL, 
+	PS_1099M_CORR_RPT_IRSDT, 
+	PS_1099M_ORIG_RPT_ST_FL, 
+	PS_1099M_ORIG_RPT_STDT, 
+	PS_1099M_CORR_RPT_ST_FL, 
+	PS_1099M_CORR_RPT_STDT)
+AS 
+	SELECT 
+		ID, 
+		CREATEDTS, 
+		CREATEDBY, 
+		UPDATEDTS, 
+		UPDATEDBY, 
+		PROCESS, 
+		PSSTATUS, 
+		PSAFCD, 
+		PSSERVID, 
+		PSLSLOAN, 
+		PSPRSVLN, 
+		PSFNMALN, 
+		PSFHLMLN, 
+		PSGMLN, 
+		PSIRSYR, 
+		PSFNAM, 
+		PSMNAM, 
+		PSLNAM, 
+		PSSUFF, 
+		PSMINIT, 
+		PSMADD1, 
+		PSMADD2, 
+		PSMCITY, 
+		PSMSTATE, 
+		PSMZIP, 
+		PSTINNO, 
+		PSTINTYP, 
+		PSPADD1, 
+		PSPADD2, 
+		PSPCITY, 
+		PSPZIP, 
+		PSPLGL, 
+		PSLNCLDT, 
+		PSBGPBAL, 
+		PSEDPBAL, 
+		PS98INPD, 
+		PS98LCPD, 
+		PS98TOIN, 
+		PSPTSPD, 
+		PSTXPAID, 
+		PSMIPAID, 
+		PSREINT, 
+		PSADDFLG, 
+		PS98IRSOFL, 
+		PS98IRSODT, 
+		PS98IRSCFL, 
+		PS98IRSCDT, 
+		PS98STOFL, 
+		PS98STODT, 
+		PS98STCFL, 
+		PS98STCDT, 
+		PS99IPD, 
+		PS99ITW, 
+		PS99ISTW, 
+		PS99ITN, 
+		PS99IRSOFL, 
+		PS99IRSODT, 
+		PS99IRSCFL, 
+		PS99IRSCDT, 
+		PS99ISTOFL, 
+		PS99ISTODT, 
+		PS99ISTCFL, 
+		PS99ISTCDT, 
+		PS99AACQDT, 
+		PS99APRO, 
+		PSFAIRMV, 
+		PSBLIABLE, 
+		PS1099AOFL, 
+		PS1099AODT, 
+		PS1099ACFL, 
+		PS1099ACDT, 
+		PS99ASTOFL, 
+		PS99ASTODT, 
+		PS99ASTCFL, 
+		PS99ASTCDT, 
+		PS99CCDT, 
+		PS99CPRIN, 
+		PS99CINT, 
+		PS99CPEN, 
+		PS99CTOT, 
+		PS1099COFL, 
+		PS1099CODT, 
+		PS1099CCFL, 
+		PS1099CCDT, 
+		PS99CSTOFL, 
+		PS99CSTODT, 
+		PS99CSTCFL, 
+		PS99CSTCDT, 
+		PS99MOTH, 
+		PS99MNEC, 
+		PS99MTWHD, 
+		PS1099MOFL, 
+		PS1099MODT, 
+		PS1099MCFL, 
+		PS1099MCDT, 
+		PS99MSTOFL, 
+		PS99MSTODT, 
+		PS99MSTCFL, 
+		PS99MSTCDT
+	FROM LDATATST.NLSPSERV
+GO
+*/
+
+</pre></div></div><script>
+var sourceLanguage = 'sql';
+var sourceEditorSelections = [{start:2160, end:3726, guid:'797c1a48-8a31-4ddf-81bf-377e5b224ace', reflection:['ad632bb3-ffd7-42c4-86b5-b209234212cf'], convmessInfoIds:[], convmessWarningIds:[], convmessErrorIds:[]},{start:0, end:3727, guid:'a0a69ace-5f78-416d-8b72-4a518fa1f7d2', reflection:['7f560513-89c4-4d17-a022-7cd6ce51d2bd'], convmessInfoIds:[], convmessWarningIds:[], convmessErrorIds:[]}];
+var targetLanguage = 'sql';
+var targetEditorSelections = [{start:10845, end:12209, guid:'ad632bb3-ffd7-42c4-86b5-b209234212cf', reflection:['797c1a48-8a31-4ddf-81bf-377e5b224ace'], convmessInfoIds:[], convmessWarningIds:[], convmessErrorIds:[]},{start:8491, end:12209, guid:'7f560513-89c4-4d17-a022-7cd6ce51d2bd', reflection:['a0a69ace-5f78-416d-8b72-4a518fa1f7d2'], convmessInfoIds:[], convmessWarningIds:[], convmessErrorIds:[]},{start:0, end:12217, guid:'87459247-5b80-427c-ba9b-8d4790c1438c', reflection:[], convmessInfoIds:[], convmessWarningIds:[], convmessErrorIds:['DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083']}];
+</script><script src='../js/code.js'></script></body></html>

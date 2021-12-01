@@ -1,0 +1,134 @@
+<html>
+<head>
+<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge' />
+<link rel=stylesheet data-name='vs/editor/editor.main' href='../monaco/editor.main.css' type='text/css'>
+<link rel='stylesheet' type='text/css' href='../css/style.css'></link>
+<script type='text/javascript' src='../js/functions.js'></script>
+<script async='async' type='text/javascript' src='../monaco/sql.js'></script>
+<script src='../monaco/loader.js'></script>
+<script src='../monaco/editor.main.nls.js'></script>
+<script src='../monaco/editor.main.js'></script>
+</head>
+<body class='sql-body' id='scrollable-body'>
+<div id='left-side' class='left-side'><div class='panel'>
+<span class='panel-title source'>&nbsp;Source</span>
+<img tabindex='0' aria-label='Previous problem' role='button' class='nav-button nav-button-disabled' id='source_previous_problem' src='../img/previous_problem.gif' onclick='handleProblemButtonClick(-1, true)' title='Previous problem' />
+<img tabindex='0' aria-label='Next problem' role='button' class='nav-button nav-button-disabled' id='source_next_problem' src='../img/next_problem.gif' onclick='handleProblemButtonClick(1, true)' title='Next problem' />
+<img tabindex='0' aria-label='Previous bookmark' role='button' class='nav-button nav-button-disabled' id='source_previous_bookmark' src='../img/previous_bookmark.gif' onclick='handleBookmarkButtonClick(-1, true)' title='Previous bookmark' />
+<img tabindex='0' aria-label='Next bookmark' role='button' class='nav-button nav-button-disabled' id='source_next_bookmark' src='../img/next_bookmark.gif' onclick='handleBookmarkButtonClick(1, true)' title='Next bookmark' />
+<img tabindex='0' aria-label='Clear bookmarks' role='button' class='nav-button nav-button-disabled' id='source_clear_bookmarks' src='../img/clear_bookmarks.gif' onclick='handleBookmarkButtonClick(0, true)' title='Clear bookmarks' />
+<a class='raw-source-link' target='_blank' aria-label='Raw source' href='./src.sql.txt');'>Raw source</a>
+</div>
+<div class='editor-container'>
+<div id='monaco-left-side'></div><pre id='monaco-left-side-sql'>
+CREATE 
+	VIEW LDATATST.AUDITV (ID, CREATEDTS, CREATEDBY, STATUS, "TYPE", FROMTABLE, FROMKEY01, FROMKEY02, FROMKEY03, FROMKEY04, FROMKEY05, FROMKEY06, FROMKEY07, FROMKEY08, FROMKEY09, FROMKEY10, SOURCE, DBACTION, AUDITTABID, AUDITCOLID, COLUMN_NAME, COLUMN_NUMBER_OF_PARTS, COLUMN_PART_SEQUENCE, BEFORE_VALUE, AFTER_VALUE)
+		AS 
+			SELECT 
+				ID, 
+				CREATEDTS, 
+				CREATEDBY, 
+				STATUS, 
+				TYPE, 
+				FROMTABLE, 
+				FROMKEY01, 
+				FROMKEY02, 
+				FROMKEY03, 
+				FROMKEY04, 
+				FROMKEY05, 
+				FROMKEY06, 
+				FROMKEY07, 
+				FROMKEY08, 
+				FROMKEY09, 
+				FROMKEY10, 
+				SOURCE, 
+				DBACTION, 
+				AUDITTABID, 
+				AUDITCOLID, 
+				COLNAME, 
+				COLNUMPART, 
+				COLPARTSEQ, 
+				BEFOREVAL, 
+				AFTERVAL
+			FROM LDATATST.AUDIT;</pre></div></div><div id='resize-bar' class='resize-bar'></div><div id='right-side' class='right-side'><div class='panel'>
+<span class='panel-title target'>&nbsp;Target</span>
+<img tabindex='0' aria-label='Previous problem' role='button' class='nav-button nav-button-disabled' id='target_previous_problem' src='../img/previous_problem.gif' onclick='handleProblemButtonClick(-1, false)' title='Previous problem' />
+<img tabindex='0' aria-label='Next problem' role='button' class='nav-button nav-button-disabled' id='target_next_problem' src='../img/next_problem.gif' onclick='handleProblemButtonClick(1, false)' title='Next problem' />
+<img tabindex='0' aria-label='Previous bookmark' role='button' class='nav-button nav-button-disabled' id='target_previous_bookmark' src='../img/previous_bookmark.gif' onclick='handleBookmarkButtonClick(-1, false)' title='Previous bookmark' />
+<img tabindex='0' aria-label='Next bookmark' role='button' class='nav-button nav-button-disabled' id='target_next_bookmark' src='../img/next_bookmark.gif' onclick='handleBookmarkButtonClick(1, false)' title='Next bookmark' />
+<img tabindex='0' aria-label='Clear bookmarks' role='button' class='nav-button nav-button-disabled' id='target_clear_bookmarks' src='../img/clear_bookmarks.gif' onclick='handleBookmarkButtonClick(0, false)' title='Clear bookmarks' />
+</div>
+<div class='editor-container'>
+<div id='monaco-right-side'></div><pre id='monaco-right-side-sql'>
+/* 
+*   SSMA error messages:
+*   DB22SS0083: Identifier COLNAME cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier COLNUMPART cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier COLPARTSEQ cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier BEFOREVAL cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier AFTERVAL cannot be converted because it was not resolved.
+
+CREATE VIEW LDATATST.AUDITV (
+	ID, 
+	CREATEDTS, 
+	CREATEDBY, 
+	STATUS, 
+	"TYPE", 
+	FROMTABLE, 
+	FROMKEY01, 
+	FROMKEY02, 
+	FROMKEY03, 
+	FROMKEY04, 
+	FROMKEY05, 
+	FROMKEY06, 
+	FROMKEY07, 
+	FROMKEY08, 
+	FROMKEY09, 
+	FROMKEY10, 
+	SOURCE, 
+	DBACTION, 
+	AUDITTABID, 
+	AUDITCOLID, 
+	COLUMN_NAME, 
+	COLUMN_NUMBER_OF_PARTS, 
+	COLUMN_PART_SEQUENCE, 
+	BEFORE_VALUE, 
+	AFTER_VALUE)
+AS 
+	SELECT 
+		AUDIT.ID, 
+		AUDIT.CREATEDTS, 
+		AUDIT.CREATEDBY, 
+		AUDIT.STATUS, 
+		AUDIT.TYPE, 
+		AUDIT.FROMTABLE, 
+		AUDIT.FROMKEY01, 
+		AUDIT.FROMKEY02, 
+		AUDIT.FROMKEY03, 
+		AUDIT.FROMKEY04, 
+		AUDIT.FROMKEY05, 
+		AUDIT.FROMKEY06, 
+		AUDIT.FROMKEY07, 
+		AUDIT.FROMKEY08, 
+		AUDIT.FROMKEY09, 
+		AUDIT.FROMKEY10, 
+		AUDIT.SOURCE, 
+		AUDIT.DBACTION, 
+		AUDIT.AUDITTABID, 
+		AUDIT.AUDITCOLID, 
+		COLNAME, 
+		COLNUMPART, 
+		COLPARTSEQ, 
+		BEFOREVAL, 
+		AFTERVAL
+	FROM LDATATST.AUDIT
+GO
+*/
+
+</pre></div></div><script>
+var sourceLanguage = 'sql';
+var sourceEditorSelections = [{start:328, end:742, guid:'21fa92a1-9a9b-479a-ab52-36c7652510e4', reflection:['87497da6-4bda-4c9e-8ff0-97e479338a65'], convmessInfoIds:[], convmessWarningIds:[], convmessErrorIds:[]},{start:0, end:743, guid:'a2d74c05-78b2-465b-8b6a-fab7234aae51', reflection:['744c192e-1587-4b19-aa29-9405ef787874'], convmessInfoIds:[], convmessWarningIds:[], convmessErrorIds:[]}];
+var targetLanguage = 'sql';
+var targetEditorSelections = [{start:833, end:1313, guid:'87497da6-4bda-4c9e-8ff0-97e479338a65', reflection:['21fa92a1-9a9b-479a-ab52-36c7652510e4'], convmessInfoIds:[], convmessWarningIds:[], convmessErrorIds:[]},{start:459, end:1313, guid:'744c192e-1587-4b19-aa29-9405ef787874', reflection:['a2d74c05-78b2-465b-8b6a-fab7234aae51'], convmessInfoIds:[], convmessWarningIds:[], convmessErrorIds:[]},{start:0, end:1321, guid:'0c22b1c5-fe9a-466f-bf1d-3ee3e52f550c', reflection:[], convmessInfoIds:[], convmessWarningIds:[], convmessErrorIds:['DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083']}];
+</script><script src='../js/code.js'></script></body></html>

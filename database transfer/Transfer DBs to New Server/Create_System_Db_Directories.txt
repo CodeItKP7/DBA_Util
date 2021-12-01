@@ -1,0 +1,13 @@
+'Create SYS DB folders on SQLMounts
+mkdir -p c:\SQLMounts\Data1\SQLData1
+mkdir -p c:\SQLMounts\Data2\SQLData1
+mkdir -p c:\SQLMounts\Logs1\SQLLogs1
+mkdir -p c:\SQLMounts\Logs2\SQLLogs1
+
+mkdir  c:\SQLMounts\Data1\MSSQL14.MSSQLSERVER\MSSQL\DATA
+mkdir  c:\SQLMounts\Logs2\MSSQL14.MSSQLSERVER\MSSQL\Logs
+mkdir  c:\SQLMounts\TempDB\SQLTempData1
+mkdir  c:\SQLMounts\Logs2\MSSQL14.MSSQLSERVER\MSSQL\Logs
+mkdir  c:\SQLMounts\SQLBackups\MSSQL14.MSSQLSERVER\MSSQL
+mkdir  C:\SQLMounts\SQLBackups\SQLBackups1
+

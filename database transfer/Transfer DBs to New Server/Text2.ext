@@ -1,0 +1,20 @@
+[10/7/2021 1:15 PM] Parker, Kenneth
+
+Trace Flag: 3459
+Function: Disables parallel redo. Assume that you use an Always On availability group (AG) that contains heap tables. Starting in SQL Server 2016, parallel thread for redo operations is used in secondary replicas. In this case, heap tables redo operation may generate a runtime assert dump or the SQL Server may crash with an access violation error in some cases.
+
+[10/7/2021 1:16 PM] Parker, Kenneth
+
+Trace Flag: 7745
+Function: Forces Query Store to not flush data to disk on database shutdown.
+Note: Using this trace may cause Query Store data not previously flushed to disk to be lost in case of shutdown. For a SQL Server shutdown, the command SHUTDOWN WITH NOWAIT can be used instead of this trace flag to force an immediate shutdown.
+
+[10/7/2021 1:16 PM] Parker, Kenneth
+
+Trace Flag: 7752
+Function: Enables asynchronous load of Query Store.
+Note: Use this trace flag if SQL Server is experiencing high number of QDS_LOADDB waits related to Query Store synchronous load (default behavior).
+
+-T3459
+-T7745
+-T7752

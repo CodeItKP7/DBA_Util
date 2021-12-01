@@ -1,0 +1,290 @@
+<html>
+<head>
+<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge' />
+<link rel=stylesheet data-name='vs/editor/editor.main' href='../monaco/editor.main.css' type='text/css'>
+<link rel='stylesheet' type='text/css' href='../css/style.css'></link>
+<script type='text/javascript' src='../js/functions.js'></script>
+<script async='async' type='text/javascript' src='../monaco/sql.js'></script>
+<script src='../monaco/loader.js'></script>
+<script src='../monaco/editor.main.nls.js'></script>
+<script src='../monaco/editor.main.js'></script>
+</head>
+<body class='sql-body' id='scrollable-body'>
+<div id='left-side' class='left-side'><div class='panel'>
+<span class='panel-title source'>&nbsp;Source</span>
+<img tabindex='0' aria-label='Previous problem' role='button' class='nav-button nav-button-disabled' id='source_previous_problem' src='../img/previous_problem.gif' onclick='handleProblemButtonClick(-1, true)' title='Previous problem' />
+<img tabindex='0' aria-label='Next problem' role='button' class='nav-button nav-button-disabled' id='source_next_problem' src='../img/next_problem.gif' onclick='handleProblemButtonClick(1, true)' title='Next problem' />
+<img tabindex='0' aria-label='Previous bookmark' role='button' class='nav-button nav-button-disabled' id='source_previous_bookmark' src='../img/previous_bookmark.gif' onclick='handleBookmarkButtonClick(-1, true)' title='Previous bookmark' />
+<img tabindex='0' aria-label='Next bookmark' role='button' class='nav-button nav-button-disabled' id='source_next_bookmark' src='../img/next_bookmark.gif' onclick='handleBookmarkButtonClick(1, true)' title='Next bookmark' />
+<img tabindex='0' aria-label='Clear bookmarks' role='button' class='nav-button nav-button-disabled' id='source_clear_bookmarks' src='../img/clear_bookmarks.gif' onclick='handleBookmarkButtonClick(0, true)' title='Clear bookmarks' />
+<a class='raw-source-link' target='_blank' aria-label='Raw source' href='./src.sql.txt');'>Raw source</a>
+</div>
+<div class='editor-container'>
+<div id='monaco-left-side'></div><pre id='monaco-left-side-sql'>
+CREATE 
+	VIEW LDATATST.BKCLAIMHV (CH_ID, CH_CREATED_TIMESTAMP, CH_CREATED_BY, CH_UPDATED_TIMESTAMP, CH_UPDATED_BY, CH_CAS_PROCESS, CH_CAS_STATUS, CH_LOAN_NBR, CH_BKR_CASE, CH_CLAIM_TYPE, CH_STATUS, CH_COURTS_CLAIM_ID, CH_CREATED_DATE, CH_FILED_DATE, CH_DENIED_DATE, CH_CONFIRMED_DATE, CH_DISMISSED_DATE, CH_DUE_DATE, CH_FIRST_DUE_INSTALL_DATE, CH_LAST_DUE_INSTALL_DATE, CH_NEXT_DUE_INSTALL_DATE, CH_UPB_AT_FILING, CH_AMORTIZED_UPB, CH_REMAINING_AMORTIZED_UPB, CH_INSTALL_DUE, CH_INSTALL_PAID, CH_INSTALL_REMAIN, CH_TOT_INSTALL_CLAIMED, CH_TOT_INSTALL_CONFIRMED, CH_TOT_INSTALL_PAID, CH_TOT_INSTALL_REMAIN, CH_TOT_PRINCIPAL, CH_TOT_INTEREST, CH_TOT_ESCROW, CH_TOT_LC_CLAIMED, CH_TOT_LC_CONFIRMED, CH_TOT_LC_PAID, CH_TOT_LC_REMAIN, CH_TOT_NSF_CLAIMED, CH_TOT_NSF_CONFIRMED, CH_TOT_NSF_PAID, CH_TOT_NSF_REMAIN, CH_TOT_OTH_CLAIMED, CH_TOT_OTH_CONFIRMED, CH_TOT_OTH_PAID, CH_TOT_OTH_REMAIN, CH_TOT_ESC_ADV_CLAIMED, CH_TOT_ESC_ADV_CONFIRMED, CH_TOT_ESC_ADV_PAID, CH_TOT_ESC_ADV_REMAIN, CH_TOT_ESC_REQ_CLAIMED, CH_TOT_ESC_REQ_CONFIRMED, CH_TOT_ESC_REQ_PAID, CH_TOT_ESC_REQ_REMAIN, CH_TOT_CORP_ADV_CLAIMED, CH_TOT_CORP_ADV_CONFIRMED, CH_TOT_CORP_ADV_PAID, CH_TOT_CORP_ADV_REMAIN, CH_TO_TEMPO)
+		AS 
+			SELECT 
+				ID, 
+				CREATEDTS, 
+				CREATEDBY, 
+				UPDATEDTS, 
+				UPDATEDBY, 
+				PROCESS, 
+				STATUS, 
+				CHLOANNO, 
+				CHBKRCASE, 
+				CHCTYPE, 
+				CHSTATUS, 
+				CHCLMID, 
+				CHCRTDT, 
+				CHFILEDT, 
+				CHDNDDT, 
+				CHCNFRMDT, 
+				CHDISMSDT, 
+				CHDUEDTE, 
+				CH1STINDT, 
+				CHLSTINDT, 
+				CHNXTINDT, 
+				CHFILUPB, 
+				CHAMRTUPB, 
+				CHRMNAUPB, 
+				CHINDUE, 
+				CHINPAID, 
+				CHINRMN, 
+				CHTINCLM, 
+				CHTINCFM, 
+				CHTINPAID, 
+				CHTINRMN, 
+				CHTPRIN, 
+				CHTINT, 
+				CHTESCR, 
+				CHTLCCLM, 
+				CHTLCCFM, 
+				CHTLCPAID, 
+				CHTLCRMN, 
+				CHTNSFCLM, 
+				CHTNSFCFM, 
+				CHTNSFPID, 
+				CHTNSFRMN, 
+				CHTOTHCLM, 
+				CHTOTHCFM, 
+				CHTOTHPID, 
+				CHTOTHRMN, 
+				CHTEACLM, 
+				CHTEACFM, 
+				CHTEAPAID, 
+				CHTEARMN, 
+				CHTERCLM, 
+				CHTERCFM, 
+				CHTERPAID, 
+				CHTERRMN, 
+				CHTCACLM, 
+				CHTCACFM, 
+				CHTCAPAID, 
+				CHTCARMN, 
+				CHTOTEMPO
+			FROM LDATATST.BKCLAIMH;</pre></div></div><div id='resize-bar' class='resize-bar'></div><div id='right-side' class='right-side'><div class='panel'>
+<span class='panel-title target'>&nbsp;Target</span>
+<img tabindex='0' aria-label='Previous problem' role='button' class='nav-button nav-button-disabled' id='target_previous_problem' src='../img/previous_problem.gif' onclick='handleProblemButtonClick(-1, false)' title='Previous problem' />
+<img tabindex='0' aria-label='Next problem' role='button' class='nav-button nav-button-disabled' id='target_next_problem' src='../img/next_problem.gif' onclick='handleProblemButtonClick(1, false)' title='Next problem' />
+<img tabindex='0' aria-label='Previous bookmark' role='button' class='nav-button nav-button-disabled' id='target_previous_bookmark' src='../img/previous_bookmark.gif' onclick='handleBookmarkButtonClick(-1, false)' title='Previous bookmark' />
+<img tabindex='0' aria-label='Next bookmark' role='button' class='nav-button nav-button-disabled' id='target_next_bookmark' src='../img/next_bookmark.gif' onclick='handleBookmarkButtonClick(1, false)' title='Next bookmark' />
+<img tabindex='0' aria-label='Clear bookmarks' role='button' class='nav-button nav-button-disabled' id='target_clear_bookmarks' src='../img/clear_bookmarks.gif' onclick='handleBookmarkButtonClick(0, false)' title='Clear bookmarks' />
+</div>
+<div class='editor-container'>
+<div id='monaco-right-side'></div><pre id='monaco-right-side-sql'>
+/* 
+*   SSMA error messages:
+*   DB22SS0083: Identifier ID cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier CREATEDTS cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier CREATEDBY cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier UPDATEDTS cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier UPDATEDBY cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PROCESS cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier STATUS cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier CHLOANNO cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier CHBKRCASE cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier CHCTYPE cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier CHSTATUS cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier CHCLMID cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier CHCRTDT cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier CHFILEDT cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier CHDNDDT cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier CHCNFRMDT cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier CHDISMSDT cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier CHDUEDTE cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier CH1STINDT cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier CHLSTINDT cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier CHNXTINDT cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier CHFILUPB cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier CHAMRTUPB cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier CHRMNAUPB cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier CHINDUE cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier CHINPAID cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier CHINRMN cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier CHTINCLM cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier CHTINCFM cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier CHTINPAID cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier CHTINRMN cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier CHTPRIN cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier CHTINT cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier CHTESCR cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier CHTLCCLM cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier CHTLCCFM cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier CHTLCPAID cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier CHTLCRMN cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier CHTNSFCLM cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier CHTNSFCFM cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier CHTNSFPID cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier CHTNSFRMN cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier CHTOTHCLM cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier CHTOTHCFM cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier CHTOTHPID cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier CHTOTHRMN cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier CHTEACLM cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier CHTEACFM cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier CHTEAPAID cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier CHTEARMN cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier CHTERCLM cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier CHTERCFM cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier CHTERPAID cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier CHTERRMN cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier CHTCACLM cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier CHTCACFM cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier CHTCAPAID cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier CHTCARMN cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier CHTOTEMPO cannot be converted because it was not resolved.
+
+CREATE VIEW LDATATST.BKCLAIMHV (
+	CH_ID, 
+	CH_CREATED_TIMESTAMP, 
+	CH_CREATED_BY, 
+	CH_UPDATED_TIMESTAMP, 
+	CH_UPDATED_BY, 
+	CH_CAS_PROCESS, 
+	CH_CAS_STATUS, 
+	CH_LOAN_NBR, 
+	CH_BKR_CASE, 
+	CH_CLAIM_TYPE, 
+	CH_STATUS, 
+	CH_COURTS_CLAIM_ID, 
+	CH_CREATED_DATE, 
+	CH_FILED_DATE, 
+	CH_DENIED_DATE, 
+	CH_CONFIRMED_DATE, 
+	CH_DISMISSED_DATE, 
+	CH_DUE_DATE, 
+	CH_FIRST_DUE_INSTALL_DATE, 
+	CH_LAST_DUE_INSTALL_DATE, 
+	CH_NEXT_DUE_INSTALL_DATE, 
+	CH_UPB_AT_FILING, 
+	CH_AMORTIZED_UPB, 
+	CH_REMAINING_AMORTIZED_UPB, 
+	CH_INSTALL_DUE, 
+	CH_INSTALL_PAID, 
+	CH_INSTALL_REMAIN, 
+	CH_TOT_INSTALL_CLAIMED, 
+	CH_TOT_INSTALL_CONFIRMED, 
+	CH_TOT_INSTALL_PAID, 
+	CH_TOT_INSTALL_REMAIN, 
+	CH_TOT_PRINCIPAL, 
+	CH_TOT_INTEREST, 
+	CH_TOT_ESCROW, 
+	CH_TOT_LC_CLAIMED, 
+	CH_TOT_LC_CONFIRMED, 
+	CH_TOT_LC_PAID, 
+	CH_TOT_LC_REMAIN, 
+	CH_TOT_NSF_CLAIMED, 
+	CH_TOT_NSF_CONFIRMED, 
+	CH_TOT_NSF_PAID, 
+	CH_TOT_NSF_REMAIN, 
+	CH_TOT_OTH_CLAIMED, 
+	CH_TOT_OTH_CONFIRMED, 
+	CH_TOT_OTH_PAID, 
+	CH_TOT_OTH_REMAIN, 
+	CH_TOT_ESC_ADV_CLAIMED, 
+	CH_TOT_ESC_ADV_CONFIRMED, 
+	CH_TOT_ESC_ADV_PAID, 
+	CH_TOT_ESC_ADV_REMAIN, 
+	CH_TOT_ESC_REQ_CLAIMED, 
+	CH_TOT_ESC_REQ_CONFIRMED, 
+	CH_TOT_ESC_REQ_PAID, 
+	CH_TOT_ESC_REQ_REMAIN, 
+	CH_TOT_CORP_ADV_CLAIMED, 
+	CH_TOT_CORP_ADV_CONFIRMED, 
+	CH_TOT_CORP_ADV_PAID, 
+	CH_TOT_CORP_ADV_REMAIN, 
+	CH_TO_TEMPO)
+AS 
+	SELECT 
+		ID, 
+		CREATEDTS, 
+		CREATEDBY, 
+		UPDATEDTS, 
+		UPDATEDBY, 
+		PROCESS, 
+		STATUS, 
+		CHLOANNO, 
+		CHBKRCASE, 
+		CHCTYPE, 
+		CHSTATUS, 
+		CHCLMID, 
+		CHCRTDT, 
+		CHFILEDT, 
+		CHDNDDT, 
+		CHCNFRMDT, 
+		CHDISMSDT, 
+		CHDUEDTE, 
+		CH1STINDT, 
+		CHLSTINDT, 
+		CHNXTINDT, 
+		CHFILUPB, 
+		CHAMRTUPB, 
+		CHRMNAUPB, 
+		CHINDUE, 
+		CHINPAID, 
+		CHINRMN, 
+		CHTINCLM, 
+		CHTINCFM, 
+		CHTINPAID, 
+		CHTINRMN, 
+		CHTPRIN, 
+		CHTINT, 
+		CHTESCR, 
+		CHTLCCLM, 
+		CHTLCCFM, 
+		CHTLCPAID, 
+		CHTLCRMN, 
+		CHTNSFCLM, 
+		CHTNSFCFM, 
+		CHTNSFPID, 
+		CHTNSFRMN, 
+		CHTOTHCLM, 
+		CHTOTHCFM, 
+		CHTOTHPID, 
+		CHTOTHRMN, 
+		CHTEACLM, 
+		CHTEACFM, 
+		CHTEAPAID, 
+		CHTEARMN, 
+		CHTERCLM, 
+		CHTERCFM, 
+		CHTERPAID, 
+		CHTERRMN, 
+		CHTCACLM, 
+		CHTCACFM, 
+		CHTCAPAID, 
+		CHTCARMN, 
+		CHTOTEMPO
+	FROM LDATATST.BKCLAIMH
+GO
+*/
+
+</pre></div></div><script>
+var sourceLanguage = 'sql';
+var sourceEditorSelections = [{start:1191, end:2118, guid:'fb135b46-7f54-4f7a-a65e-c8e880d21d88', reflection:['87a3d922-f167-4dba-baf3-899cb23214ae'], convmessInfoIds:[], convmessWarningIds:[], convmessErrorIds:[]},{start:0, end:2119, guid:'3c05edcb-4c36-4fa5-9abc-5be707fb6d28', reflection:['c6c22c72-c4a5-4548-98f3-5914c390f71b'], convmessInfoIds:[], convmessWarningIds:[], convmessErrorIds:[]}];
+var targetLanguage = 'sql';
+var targetEditorSelections = [{start:6357, end:7162, guid:'87a3d922-f167-4dba-baf3-899cb23214ae', reflection:['fb135b46-7f54-4f7a-a65e-c8e880d21d88'], convmessInfoIds:[], convmessWarningIds:[], convmessErrorIds:[]},{start:5052, end:7162, guid:'c6c22c72-c4a5-4548-98f3-5914c390f71b', reflection:['3c05edcb-4c36-4fa5-9abc-5be707fb6d28'], convmessInfoIds:[], convmessWarningIds:[], convmessErrorIds:[]},{start:0, end:7170, guid:'019bb7ab-3302-4cd2-b229-fc4f6e1159bd', reflection:[], convmessInfoIds:[], convmessWarningIds:[], convmessErrorIds:['DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083']}];
+</script><script src='../js/code.js'></script></body></html>

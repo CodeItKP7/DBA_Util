@@ -1,0 +1,1189 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link media="all" rel="stylesheet" type="text/css" href="../css/style.css"/>
+    <script type="text/javascript" src="../highcharts/highcharts.js"></script>
+    <script type="text/javascript" src="../highcharts/accessibility.js"></script>
+    <script type="text/javascript" src="../js/functions.js"></script>
+    <script type="text/javascript" src="../js/scenario.js"></script>
+  </head>
+  <body class="no-margin stats-body">
+    <div class="path"><div class='breadcrumbs'>
+      <span style="color: firebrick" id="00000000-0000-0000-0000-000000000000">Schemas</span>
+      <a> &gt; </a>
+      <a class="breadcrumb" id="837ef5fa-1af9-4f5f-a809-e25dc2e22ee0" href="javascript:void(0);" tabindex="0" onclick="treeNav(&#39;837ef5fa-1af9-4f5f-a809-e25dc2e22ee0&#39;, null)">LDATATST</a>
+      <a> &gt; </a>
+      <span style="font-weight: bold; color: blue" id="2df19c8a-9244-4b05-a9fb-56529e1a12ba">Views</span>
+      </div>
+      <a tabindex='0' href='javascript:void(0);' role='button' aria-label='Minimize/maximize statistics' class='maximize-button' onclick='toggleAll()'>&#9974;</a>
+      <div class="clearfix"></div>
+    </div>
+    
+<div class='tab-navigation' >
+    <a id='stat-buttons-tab-0' class='stat-buttons-tab tab-selected' href='javascript:void(0);' tabindex='0' aria-label='Overview' role='tab' index='0' onclick='tabClicked(this)'>
+    
+        <div style='position:relative;top:4px;font-family:Arial;font-size:9.75pt;color:black;'>
+    Overview
+    
+        </div>
+    </a>
+    
+    <a id='stat-buttons-tab-2' class='stat-buttons-tab' href='javascript:void(0);' tabindex='0' aria-label='Details' role='tab' index='2' onclick='tabClicked(this)'>
+        <div style='position:relative;top:4px;font-family:Arial;font-size:9.75pt;color:black;'>Details</div>
+    </a>
+</div>
+
+    <div id="content-stat-buttons-tab-0" class="content-tab full-width">
+      <div class="scrollable-tab">
+        <div class="chart">
+          <div id="pieContainer">
+            <div id="pieConversion" class="half-width"></div>
+            <div id="pieEffort" class="half-width"></div>
+            <script>
+initPieChart(
+    [
+        {name: 'Automatic', y: 0, color: 'forestgreen'},
+        {name: 'Warning', y: 0, color: 'gold'},
+        {name: 'Error', y: 48, color: 'crimson'},
+    ],
+    'Object',
+    'Object Conversion<br>48 Object(s)',
+    'Breakdown of objects categorized by severity of conversion issues',
+    'pieConversion');
+initPieChart(
+    [
+        {name: 'Warning', y: 0, color: 'steelblue'},
+        {name: 'Error', y: 1200.5, color: 'navy'},
+    ],
+    'Hour',
+    'Manual Conversion Time<br>1200.5 Hour(s)',
+    'Distribution of estimated manual effort in hours',
+    'pieEffort');</script>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+        <div class="chart-title">Objects Breakdown</div>
+        <div class="chart-subtitle">Child objects with conversion issues</div>
+        <div class="chart-legend-container">
+          <div class="sample info"></div>
+          Automatic
+          <div class="sample warning"></div>
+          Warning
+          <div class="sample error"></div>
+          Error
+          <br/>
+          <div class="sample warning-hours"></div>
+          Warning hours
+          <div class="sample error-hours"></div>
+          Error hours</div>
+        <div class="bar-chart-container">
+          <div class="bar-chart-label clickable" onclick="treeNav(&#39;bedbe960-f739-46a6-ae7f-510cefb0c767&#39;, null);">SRVPSERV_VIEW</div>
+          <div id="barChart0" class="bar-chart"></div>
+          <div class="clearfix"></div>
+        </div>
+        <script>initBarChart({'totalElements':1,'automaticElements':0,'errorElements':1,'warningElements':0,'infoElements':0,'errorHours':69.3,'warningHours':0}, 'barChart0');</script>
+        <div class="bar-chart-container">
+          <div class="bar-chart-label clickable" onclick="treeNav(&#39;8cde7b5c-9b28-4067-aa4e-06b2f2b1e46e&#39;, null);">SRVRHDRHV</div>
+          <div id="barChart1" class="bar-chart"></div>
+          <div class="clearfix"></div>
+        </div>
+        <script>initBarChart({'totalElements':1,'automaticElements':0,'errorElements':1,'warningElements':0,'infoElements':0,'errorHours':12.6,'warningHours':0}, 'barChart1');</script>
+        <div class="bar-chart-container">
+          <div class="bar-chart-label clickable" onclick="treeNav(&#39;441ee7d0-d3ed-44f1-aec7-c9bf24cfbf82&#39;, null);">SERVMAST_VIEW</div>
+          <div id="barChart2" class="bar-chart"></div>
+          <div class="clearfix"></div>
+        </div>
+        <script>initBarChart({'totalElements':1,'automaticElements':0,'errorElements':1,'warningElements':0,'infoElements':0,'errorHours':55.3,'warningHours':0}, 'barChart2');</script>
+        <div class="bar-chart-container">
+          <div class="bar-chart-label clickable" onclick="treeNav(&#39;f576f83e-201c-45bc-bf86-0e23e90ef463&#39;, null);">SRVSFDMHV</div>
+          <div id="barChart3" class="bar-chart"></div>
+          <div class="clearfix"></div>
+        </div>
+        <script>initBarChart({'totalElements':1,'automaticElements':0,'errorElements':1,'warningElements':0,'infoElements':0,'errorHours':45.5,'warningHours':0}, 'barChart3');</script>
+        <div class="bar-chart-container">
+          <div class="bar-chart-label clickable" onclick="treeNav(&#39;6a7ce3ee-4b2e-49ae-920d-2bc2a27fa301&#39;, null);">SRVTRWV_VIEW</div>
+          <div id="barChart4" class="bar-chart"></div>
+          <div class="clearfix"></div>
+        </div>
+        <script>initBarChart({'totalElements':1,'automaticElements':0,'errorElements':1,'warningElements':0,'infoElements':0,'errorHours':16.1,'warningHours':0}, 'barChart4');</script>
+        <div class="bar-chart-container">
+          <div class="bar-chart-label clickable" onclick="treeNav(&#39;1f4fa1ac-f46e-4ac7-91a9-3839ec8d43b4&#39;, null);">LNESCEV</div>
+          <div id="barChart5" class="bar-chart"></div>
+          <div class="clearfix"></div>
+        </div>
+        <script>initBarChart({'totalElements':1,'automaticElements':0,'errorElements':1,'warningElements':0,'infoElements':0,'errorHours':33.6,'warningHours':0}, 'barChart5');</script>
+        <div class="bar-chart-container">
+          <div class="bar-chart-label clickable" onclick="treeNav(&#39;9a456507-67b3-4063-ac7e-a3428c46e3d4&#39;, null);">INVESTOR_VIEW</div>
+          <div id="barChart6" class="bar-chart"></div>
+          <div class="clearfix"></div>
+        </div>
+        <script>initBarChart({'totalElements':1,'automaticElements':0,'errorElements':1,'warningElements':0,'infoElements':0,'errorHours':5.6,'warningHours':0}, 'barChart6');</script>
+        <div class="bar-chart-container">
+          <div class="bar-chart-label clickable" onclick="treeNav(&#39;fdaaabaa-5fd0-48e2-a61c-b676f089227b&#39;, null);">SUCCIINT_VIEW</div>
+          <div id="barChart7" class="bar-chart"></div>
+          <div class="clearfix"></div>
+        </div>
+        <script>initBarChart({'totalElements':1,'automaticElements':0,'errorElements':1,'warningElements':0,'infoElements':0,'errorHours':28.7,'warningHours':0}, 'barChart7');</script>
+        <div class="bar-chart-container">
+          <div class="bar-chart-label clickable" onclick="treeNav(&#39;9b6da600-983a-437d-a13a-43d649d03b7f&#39;, null);">TINMATCH_VIEW</div>
+          <div id="barChart8" class="bar-chart"></div>
+          <div class="clearfix"></div>
+        </div>
+        <script>initBarChart({'totalElements':1,'automaticElements':0,'errorElements':1,'warningElements':0,'infoElements':0,'errorHours':13.3,'warningHours':0}, 'barChart8');</script>
+        <div class="bar-chart-container">
+          <div class="bar-chart-label clickable" onclick="treeNav(&#39;4247d3ba-f1b4-4971-b62b-e3e212497d8b&#39;, null);">TRW_CHANGE_VIEW</div>
+          <div id="barChart9" class="bar-chart"></div>
+          <div class="clearfix"></div>
+        </div>
+        <script>initBarChart({'totalElements':1,'automaticElements':0,'errorElements':1,'warningElements':0,'infoElements':0,'errorHours':9.1,'warningHours':0}, 'barChart9');</script>
+        <div class="bar-chart-container">
+          <div class="bar-chart-label clickable" onclick="treeNav(&#39;01dd6f02-f5d9-4036-b7b8-8050bf7427ef&#39;, null);">ACTDUTYH_VIEW</div>
+          <div id="barChart10" class="bar-chart"></div>
+          <div class="clearfix"></div>
+        </div>
+        <script>initBarChart({'totalElements':1,'automaticElements':0,'errorElements':1,'warningElements':0,'infoElements':0,'errorHours':20.3,'warningHours':0}, 'barChart10');</script>
+        <div class="bar-chart-container">
+          <div class="bar-chart-label clickable" onclick="treeNav(&#39;2884d816-171b-4bd9-855d-9e9c70352a5d&#39;, null);">AUDITV</div>
+          <div id="barChart11" class="bar-chart"></div>
+          <div class="clearfix"></div>
+        </div>
+        <script>initBarChart({'totalElements':1,'automaticElements':0,'errorElements':1,'warningElements':0,'infoElements':0,'errorHours':3.5,'warningHours':0}, 'barChart11');</script>
+        <div class="bar-chart-container">
+          <div class="bar-chart-label clickable" onclick="treeNav(&#39;8d8c29ba-27ba-44c1-a16c-96cc5cc76642&#39;, null);">BKCASEV</div>
+          <div id="barChart12" class="bar-chart"></div>
+          <div class="clearfix"></div>
+        </div>
+        <script>initBarChart({'totalElements':1,'automaticElements':0,'errorElements':1,'warningElements':0,'infoElements':0,'errorHours':82.6,'warningHours':0}, 'barChart12');</script>
+        <div class="bar-chart-container">
+          <div class="bar-chart-label clickable" onclick="treeNav(&#39;89232840-848a-40cc-adb2-f8fddbfee974&#39;, null);">BKCLAIMDV</div>
+          <div id="barChart13" class="bar-chart"></div>
+          <div class="clearfix"></div>
+        </div>
+        <script>initBarChart({'totalElements':1,'automaticElements':0,'errorElements':1,'warningElements':0,'infoElements':0,'errorHours':18.2,'warningHours':0}, 'barChart13');</script>
+        <div class="bar-chart-container">
+          <div class="bar-chart-label clickable" onclick="treeNav(&#39;1d9bd26c-2f33-49c4-87eb-758908f32b69&#39;, null);">BKCLAIMHV</div>
+          <div id="barChart14" class="bar-chart"></div>
+          <div class="clearfix"></div>
+        </div>
+        <script>initBarChart({'totalElements':1,'automaticElements':0,'errorElements':1,'warningElements':0,'infoElements':0,'errorHours':41.3,'warningHours':0}, 'barChart14');</script>
+        <div class="bar-chart-container">
+          <div class="bar-chart-label clickable" onclick="treeNav(&#39;47be8ee9-7a66-4b17-b6d6-e00f1fdd8cd9&#39;, null);">BKENTITYV</div>
+          <div id="barChart15" class="bar-chart"></div>
+          <div class="clearfix"></div>
+        </div>
+        <script>initBarChart({'totalElements':1,'automaticElements':0,'errorElements':1,'warningElements':0,'infoElements':0,'errorHours':16.1,'warningHours':0}, 'barChart15');</script>
+        <div class="bar-chart-container">
+          <div class="bar-chart-label clickable" onclick="treeNav(&#39;a0c30614-c525-4039-a11b-45a23f7fa2e6&#39;, null);">BKPMNTSV</div>
+          <div id="barChart16" class="bar-chart"></div>
+          <div class="clearfix"></div>
+        </div>
+        <script>initBarChart({'totalElements':1,'automaticElements':0,'errorElements':1,'warningElements':0,'infoElements':0,'errorHours':20.3,'warningHours':0}, 'barChart16');</script>
+        <div class="bar-chart-container">
+          <div class="bar-chart-label clickable" onclick="treeNav(&#39;1de9fbd8-d779-401b-956b-6bb4efcc9235&#39;, null);">BKPMTPLDV</div>
+          <div id="barChart17" class="bar-chart"></div>
+          <div class="clearfix"></div>
+        </div>
+        <script>initBarChart({'totalElements':1,'automaticElements':0,'errorElements':1,'warningElements':0,'infoElements':0,'errorHours':13.3,'warningHours':0}, 'barChart17');</script>
+        <div class="bar-chart-container">
+          <div class="bar-chart-label clickable" onclick="treeNav(&#39;e254e46e-e81d-4b97-b441-035429b9ca80&#39;, null);">BKPMTPLHV</div>
+          <div id="barChart18" class="bar-chart"></div>
+          <div class="clearfix"></div>
+        </div>
+        <script>initBarChart({'totalElements':1,'automaticElements':0,'errorElements':1,'warningElements':0,'infoElements':0,'errorHours':18.2,'warningHours':0}, 'barChart18');</script>
+        <div class="bar-chart-container">
+          <div class="bar-chart-label clickable" onclick="treeNav(&#39;e7eea757-6203-4743-b567-186f1ed0d3ee&#39;, null);">IVRMCATG_VIEW</div>
+          <div id="barChart19" class="bar-chart"></div>
+          <div class="clearfix"></div>
+        </div>
+        <script>initBarChart({'totalElements':1,'automaticElements':0,'errorElements':1,'warningElements':0,'infoElements':0,'errorHours':7.0,'warningHours':0}, 'barChart19');</script>
+        <div class="bar-chart-container">
+          <div class="bar-chart-label clickable" onclick="treeNav(&#39;3059fcde-9f5f-464a-8398-339e57d61668&#39;, null);">IVRMCTRL_VIEW</div>
+          <div id="barChart20" class="bar-chart"></div>
+          <div class="clearfix"></div>
+        </div>
+        <script>initBarChart({'totalElements':1,'automaticElements':0,'errorElements':1,'warningElements':0,'infoElements':0,'errorHours':25.9,'warningHours':0}, 'barChart20');</script>
+        <div class="bar-chart-container">
+          <div class="bar-chart-label clickable" onclick="treeNav(&#39;fa9e495b-198f-4921-ab6d-4fb8e85188a6&#39;, null);">IVRMCTSC_VIEW</div>
+          <div id="barChart21" class="bar-chart"></div>
+          <div class="clearfix"></div>
+        </div>
+        <script>initBarChart({'totalElements':1,'automaticElements':0,'errorElements':1,'warningElements':0,'infoElements':0,'errorHours':13.3,'warningHours':0}, 'barChart21');</script>
+        <div class="bar-chart-container">
+          <div class="bar-chart-label clickable" onclick="treeNav(&#39;41fe483a-6b18-4c3f-8807-771646192b1d&#39;, null);">LAR80V</div>
+          <div id="barChart22" class="bar-chart"></div>
+          <div class="clearfix"></div>
+        </div>
+        <script>initBarChart({'totalElements':1,'automaticElements':0,'errorElements':1,'warningElements':0,'infoElements':0,'errorHours':17.5,'warningHours':0}, 'barChart22');</script>
+        <div class="bar-chart-container">
+          <div class="bar-chart-label clickable" onclick="treeNav(&#39;dee7f9f9-24cf-4ee7-9c4d-2483812b4e3b&#39;, null);">LAR81V</div>
+          <div id="barChart23" class="bar-chart"></div>
+          <div class="clearfix"></div>
+        </div>
+        <script>initBarChart({'totalElements':1,'automaticElements':0,'errorElements':1,'warningElements':0,'infoElements':0,'errorHours':16.1,'warningHours':0}, 'barChart23');</script>
+        <div class="bar-chart-container">
+          <div class="bar-chart-label clickable" onclick="treeNav(&#39;7a1d2092-ae89-4dcb-8cb5-9db37a846288&#39;, null);">LAR82V</div>
+          <div id="barChart24" class="bar-chart"></div>
+          <div class="clearfix"></div>
+        </div>
+        <script>initBarChart({'totalElements':1,'automaticElements':0,'errorElements':1,'warningElements':0,'infoElements':0,'errorHours':16.1,'warningHours':0}, 'barChart24');</script>
+        <div class="bar-chart-container">
+          <div class="bar-chart-label clickable" onclick="treeNav(&#39;32c556dc-1ddd-4bb5-9cce-b821393e1902&#39;, null);">LAR83V</div>
+          <div id="barChart25" class="bar-chart"></div>
+          <div class="clearfix"></div>
+        </div>
+        <script>initBarChart({'totalElements':1,'automaticElements':0,'errorElements':1,'warningElements':0,'infoElements':0,'errorHours':20.3,'warningHours':0}, 'barChart25');</script>
+        <div class="bar-chart-container">
+          <div class="bar-chart-label clickable" onclick="treeNav(&#39;46c9a5f7-e5dc-4994-a6b2-ec8ce6d40ab0&#39;, null);">LAR89V</div>
+          <div id="barChart26" class="bar-chart"></div>
+          <div class="clearfix"></div>
+        </div>
+        <script>initBarChart({'totalElements':1,'automaticElements':0,'errorElements':1,'warningElements':0,'infoElements':0,'errorHours':16.8,'warningHours':0}, 'barChart26');</script>
+        <div class="bar-chart-container">
+          <div class="bar-chart-label clickable" onclick="treeNav(&#39;57f13305-76c9-4934-9b2f-5a80849d117f&#39;, null);">LAR96V</div>
+          <div id="barChart27" class="bar-chart"></div>
+          <div class="clearfix"></div>
+        </div>
+        <script>initBarChart({'totalElements':1,'automaticElements':0,'errorElements':1,'warningElements':0,'infoElements':0,'errorHours':21.0,'warningHours':0}, 'barChart27');</script>
+        <div class="bar-chart-container">
+          <div class="bar-chart-label clickable" onclick="treeNav(&#39;29203a2a-6862-439a-ac12-d465aa498afe&#39;, null);">LAR97V</div>
+          <div id="barChart28" class="bar-chart"></div>
+          <div class="clearfix"></div>
+        </div>
+        <script>initBarChart({'totalElements':1,'automaticElements':0,'errorElements':1,'warningElements':0,'infoElements':0,'errorHours':17.5,'warningHours':0}, 'barChart28');</script>
+        <div class="bar-chart-container">
+          <div class="bar-chart-label clickable" onclick="treeNav(&#39;d2b2f006-215c-4868-88c6-c372cf05eb81&#39;, null);">MILARPMIV</div>
+          <div id="barChart29" class="bar-chart"></div>
+          <div class="clearfix"></div>
+        </div>
+        <script>initBarChart({'totalElements':1,'automaticElements':0,'errorElements':1,'warningElements':0,'infoElements':0,'errorHours':121.1,'warningHours':0}, 'barChart29');</script>
+        <div class="bar-chart-container">
+          <div class="bar-chart-label clickable" onclick="treeNav(&#39;1408ed24-6c64-4356-8fc3-1c2ba1dde64f&#39;, null);">NLSALT4_VIEW</div>
+          <div id="barChart30" class="bar-chart"></div>
+          <div class="clearfix"></div>
+        </div>
+        <script>initBarChart({'totalElements':1,'automaticElements':0,'errorElements':1,'warningElements':0,'infoElements':0,'errorHours':18.9,'warningHours':0}, 'barChart30');</script>
+        <div class="bar-chart-container">
+          <div class="bar-chart-label clickable" onclick="treeNav(&#39;e4db2111-8d7b-46e8-95d1-dc6f54d5e6d7&#39;, null);">NLNESCEV</div>
+          <div id="barChart31" class="bar-chart"></div>
+          <div class="clearfix"></div>
+        </div>
+        <script>initBarChart({'totalElements':1,'automaticElements':0,'errorElements':1,'warningElements':0,'infoElements':0,'errorHours':33.6,'warningHours':0}, 'barChart31');</script>
+        <div class="bar-chart-container">
+          <div class="bar-chart-label clickable" onclick="treeNav(&#39;198bb384-4b02-43ed-99d6-d3ae3beebe18&#39;, null);">NLSPSERV_VIEW</div>
+          <div id="barChart32" class="bar-chart"></div>
+          <div class="clearfix"></div>
+        </div>
+        <script>initBarChart({'totalElements':1,'automaticElements':0,'errorElements':1,'warningElements':0,'infoElements':0,'errorHours':69.3,'warningHours':0}, 'barChart32');</script>
+        <div class="bar-chart-container">
+          <div class="bar-chart-label clickable" onclick="treeNav(&#39;40e700cd-a69e-471c-8540-a26a87361861&#39;, null);">OCC_STATUS_REF_VIEW</div>
+          <div id="barChart33" class="bar-chart"></div>
+          <div class="clearfix"></div>
+        </div>
+        <script>initBarChart({'totalElements':1,'automaticElements':0,'errorElements':1,'warningElements':0,'infoElements':0,'errorHours':12.6,'warningHours':0}, 'barChart33');</script>
+        <div class="bar-chart-container">
+          <div class="bar-chart-label clickable" onclick="treeNav(&#39;255d3160-6772-4b55-9a10-8cd37d38c280&#39;, null);">RHADVIV</div>
+          <div id="barChart34" class="bar-chart"></div>
+          <div class="clearfix"></div>
+        </div>
+        <script>initBarChart({'totalElements':1,'automaticElements':0,'errorElements':1,'warningElements':0,'infoElements':0,'errorHours':19.6,'warningHours':0}, 'barChart34');</script>
+        <div class="bar-chart-container">
+          <div class="bar-chart-label clickable" onclick="treeNav(&#39;98db3a1e-0ce6-4a44-8a2e-9e510bafd028&#39;, null);">RHBILLV</div>
+          <div id="barChart35" class="bar-chart"></div>
+          <div class="clearfix"></div>
+        </div>
+        <script>initBarChart({'totalElements':1,'automaticElements':0,'errorElements':1,'warningElements':0,'infoElements':0,'errorHours':23.1,'warningHours':0}, 'barChart35');</script>
+        <div class="bar-chart-container">
+          <div class="bar-chart-label clickable" onclick="treeNav(&#39;0099dd8e-fc0a-4bc3-a3bf-f268448fe25b&#39;, null);">RHHADVIV</div>
+          <div id="barChart36" class="bar-chart"></div>
+          <div class="clearfix"></div>
+        </div>
+        <script>initBarChart({'totalElements':1,'automaticElements':0,'errorElements':1,'warningElements':0,'infoElements':0,'errorHours':19.6,'warningHours':0}, 'barChart36');</script>
+        <div class="bar-chart-container">
+          <div class="bar-chart-label clickable" onclick="treeNav(&#39;fe681123-b6e6-41e6-af1b-acf0b8f0d7e0&#39;, null);">RHHBILLV</div>
+          <div id="barChart37" class="bar-chart"></div>
+          <div class="clearfix"></div>
+        </div>
+        <script>initBarChart({'totalElements':1,'automaticElements':0,'errorElements':1,'warningElements':0,'infoElements':0,'errorHours':23.1,'warningHours':0}, 'barChart37');</script>
+        <div class="bar-chart-container">
+          <div class="bar-chart-label clickable" onclick="treeNav(&#39;eae35791-5585-4dda-af34-e810c9b6afa4&#39;, null);">RHHPAYFV</div>
+          <div id="barChart38" class="bar-chart"></div>
+          <div class="clearfix"></div>
+        </div>
+        <script>initBarChart({'totalElements':1,'automaticElements':0,'errorElements':1,'warningElements':0,'infoElements':0,'errorHours':13.3,'warningHours':0}, 'barChart38');</script>
+        <div class="bar-chart-container">
+          <div class="bar-chart-label clickable" onclick="treeNav(&#39;55395e54-2a74-4c14-a14b-913fcd17c263&#39;, null);">RHHTERMNV</div>
+          <div id="barChart39" class="bar-chart"></div>
+          <div class="clearfix"></div>
+        </div>
+        <script>initBarChart({'totalElements':1,'automaticElements':0,'errorElements':1,'warningElements':0,'infoElements':0,'errorHours':14.7,'warningHours':0}, 'barChart39');</script>
+        <div class="bar-chart-container">
+          <div class="bar-chart-label clickable" onclick="treeNav(&#39;7a1f05ef-9eec-402a-b405-22182d593d09&#39;, null);">RHPAYFV</div>
+          <div id="barChart40" class="bar-chart"></div>
+          <div class="clearfix"></div>
+        </div>
+        <script>initBarChart({'totalElements':1,'automaticElements':0,'errorElements':1,'warningElements':0,'infoElements':0,'errorHours':13.3,'warningHours':0}, 'barChart40');</script>
+        <div class="bar-chart-container">
+          <div class="bar-chart-label clickable" onclick="treeNav(&#39;93878109-11d8-4ce3-bd4c-50b3be5b06f6&#39;, null);">RHPRCV</div>
+          <div id="barChart41" class="bar-chart"></div>
+          <div class="clearfix"></div>
+        </div>
+        <script>initBarChart({'totalElements':1,'automaticElements':0,'errorElements':1,'warningElements':0,'infoElements':0,'errorHours':20.3,'warningHours':0}, 'barChart41');</script>
+        <div class="bar-chart-container">
+          <div class="bar-chart-label clickable" onclick="treeNav(&#39;f7b522e3-1fef-41c6-a776-188a922cde0d&#39;, null);">RHTERMNV</div>
+          <div id="barChart42" class="bar-chart"></div>
+          <div class="clearfix"></div>
+        </div>
+        <script>initBarChart({'totalElements':1,'automaticElements':0,'errorElements':1,'warningElements':0,'infoElements':0,'errorHours':14.7,'warningHours':0}, 'barChart42');</script>
+        <div class="bar-chart-container">
+          <div class="bar-chart-label clickable" onclick="treeNav(&#39;4707b5d5-6228-4135-9a3a-a2cde28e1230&#39;, null);">SCRAFLIP_VIEW</div>
+          <div id="barChart43" class="bar-chart"></div>
+          <div class="clearfix"></div>
+        </div>
+        <script>initBarChart({'totalElements':1,'automaticElements':0,'errorElements':1,'warningElements':0,'infoElements':0,'errorHours':7.7,'warningHours':0}, 'barChart43');</script>
+        <div class="bar-chart-container">
+          <div class="bar-chart-label clickable" onclick="treeNav(&#39;89fdfa65-c241-427a-865d-ad4e0e237cab&#39;, null);">LOANALT4_VIEW</div>
+          <div id="barChart44" class="bar-chart"></div>
+          <div class="clearfix"></div>
+        </div>
+        <script>initBarChart({'totalElements':1,'automaticElements':0,'errorElements':1,'warningElements':0,'infoElements':0,'errorHours':18.9,'warningHours':0}, 'barChart44');</script>
+        <div class="bar-chart-container">
+          <div class="bar-chart-label clickable" onclick="treeNav(&#39;7592eecc-206f-442c-8caa-de10af2f5b57&#39;, null);">SRVDFMHV</div>
+          <div id="barChart45" class="bar-chart"></div>
+          <div class="clearfix"></div>
+        </div>
+        <script>initBarChart({'totalElements':1,'automaticElements':0,'errorElements':1,'warningElements':0,'infoElements':0,'errorHours':14.0,'warningHours':0}, 'barChart45');</script>
+        <div class="bar-chart-container">
+          <div class="bar-chart-label clickable" onclick="treeNav(&#39;03e5cfea-87db-4745-8f04-aeff71cf2021&#39;, null);">DFTCDXRF_VIEW</div>
+          <div id="barChart46" class="bar-chart"></div>
+          <div class="clearfix"></div>
+        </div>
+        <script>initBarChart({'totalElements':1,'automaticElements':0,'errorElements':1,'warningElements':0,'infoElements':0,'errorHours':16.1,'warningHours':0}, 'barChart46');</script>
+        <div class="bar-chart-container">
+          <div class="bar-chart-label clickable" onclick="treeNav(&#39;3b6e6c02-03c5-4a81-8c16-ea5977d537a3&#39;, null);">SRVEDRHV</div>
+          <div id="barChart47" class="bar-chart"></div>
+          <div class="clearfix"></div>
+        </div>
+        <script>initBarChart({'totalElements':1,'automaticElements':0,'errorElements':1,'warningElements':0,'infoElements':0,'errorHours':32.2,'warningHours':0}, 'barChart47');</script>
+      </div>
+    </div>
+    <div id="content-stat-buttons-tab-2" class="scrollable-tab content-tab full-width tab-content-hidden">
+      <div class="raw-data">
+        <table class="stats-table">
+          <caption>
+            <b>Objects Conversion</b>
+          </caption>
+          <colgroup>
+            <col style="width: 139px"></col>
+            <col style="width: 51px"></col>
+            <col style="width: 79px"></col>
+            <col style="width: 79px"></col>
+          </colgroup>
+          <tbody>
+            <tr>
+              <th>Object type</th>
+              <th>Total</th>
+              <th>Converted</th>
+              <th>Objects with Issues</th>
+              <th>Error Objects</th>
+              <th>Warning Objects</th>
+              <th>Info Objects</th>
+              <th>Error Hours</th>
+              <th>Warning Hours</th>
+            </tr>
+          </tbody>
+          <tbody>
+            <tr height="35">
+              <td class="align-left">
+                <span>view</span>
+              </td>
+              <td>
+                <span>48</span>
+              </td>
+              <td>
+                <span>0 %
+                  <img src="../img/error.gif"></img>
+                </span>
+              </td>
+              <td>
+                <span>48</span>
+              </td>
+              <td>
+                <span>48</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>1200.5</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="raw-data">
+        <table class="stats-table">
+          <caption>
+            <div>
+              <b>Syntax Conversion</b>
+            </div>
+          </caption>
+          <colgroup>
+            <col style="width: 139px"></col>
+            <col style="width: 51px"></col>
+            <col style="width: 79px"></col>
+            <col style="width: 79px"></col>
+          </colgroup>
+          <tbody>
+            <tr>
+              <th>Syntax element</th>
+              <th>Total</th>
+              <th>Converted</th>
+              <th>Syntax elements with Issues</th>
+              <th>Error elements</th>
+              <th>Warning elements</th>
+              <th>Info elements</th>
+              <th>Error Hours</th>
+              <th>Warning Hours</th>
+            </tr>
+            <tr>
+              <td class="align-left">
+                <span>&lt;ALL&gt;</span>
+              </td>
+              <td>
+                <span>21010</span>
+              </td>
+              <td>
+                <span>91.84 %
+                  <img src="../img/error.gif"></img>
+                </span>
+              </td>
+              <td>
+                <span>1715</span>
+              </td>
+              <td>
+                <span>1715</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>1200.5</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="align-left">
+                <span>add-expression</span>
+              </td>
+              <td>
+                <span>1814</span>
+              </td>
+              <td>
+                <span>100 %</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="align-left">
+                <span>basic-select-statement</span>
+              </td>
+              <td>
+                <span>48</span>
+              </td>
+              <td>
+                <span>100 %</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="align-left">
+                <span>bitwise-expression</span>
+              </td>
+              <td>
+                <span>1814</span>
+              </td>
+              <td>
+                <span>100 %</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="align-left">
+                <span>column</span>
+              </td>
+              <td>
+                <span>1814</span>
+              </td>
+              <td>
+                <span>100 %</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="align-left">
+                <span>column-list-in-paren</span>
+              </td>
+              <td>
+                <span>48</span>
+              </td>
+              <td>
+                <span>100 %</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="align-left">
+                <span>column-list-item</span>
+              </td>
+              <td>
+                <span>1814</span>
+              </td>
+              <td>
+                <span>100 %</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="align-left">
+                <span>complex-from-clause-item</span>
+              </td>
+              <td>
+                <span>48</span>
+              </td>
+              <td>
+                <span>100 %</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="align-left">
+                <span>create-statement</span>
+              </td>
+              <td>
+                <span>48</span>
+              </td>
+              <td>
+                <span>100 %</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="align-left">
+                <span>db2mf-root</span>
+              </td>
+              <td>
+                <span>48</span>
+              </td>
+              <td>
+                <span>100 %</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="align-left">
+                <span>dot-in-identifier</span>
+              </td>
+              <td>
+                <span>96</span>
+              </td>
+              <td>
+                <span>100 %</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="align-left">
+                <span>expression</span>
+              </td>
+              <td>
+                <span>1814</span>
+              </td>
+              <td>
+                <span>100 %</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="align-left">
+                <span>expression-list</span>
+              </td>
+              <td>
+                <span>48</span>
+              </td>
+              <td>
+                <span>100 %</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="align-left">
+                <span>expression-list-item</span>
+              </td>
+              <td>
+                <span>1814</span>
+              </td>
+              <td>
+                <span>100 %</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="align-left">
+                <span>from-clause</span>
+              </td>
+              <td>
+                <span>48</span>
+              </td>
+              <td>
+                <span>100 %</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="align-left">
+                <span>from-clause-item</span>
+              </td>
+              <td>
+                <span>48</span>
+              </td>
+              <td>
+                <span>100 %</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="align-left">
+                <span>identifier</span>
+              </td>
+              <td>
+                <span>3724</span>
+              </td>
+              <td>
+                <span>53.95 %
+                  <img src="../img/error.gif"></img>
+                </span>
+              </td>
+              <td>
+                <span>1715</span>
+              </td>
+              <td>
+                <span>1715</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>1200.5</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="align-left">
+                <span>select-expression-list</span>
+              </td>
+              <td>
+                <span>48</span>
+              </td>
+              <td>
+                <span>100 %</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="align-left">
+                <span>select-statement</span>
+              </td>
+              <td>
+                <span>48</span>
+              </td>
+              <td>
+                <span>100 %</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="align-left">
+                <span>simple-identifier</span>
+              </td>
+              <td>
+                <span>3820</span>
+              </td>
+              <td>
+                <span>100 %</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="align-left">
+                <span>statement-batch</span>
+              </td>
+              <td>
+                <span>48</span>
+              </td>
+              <td>
+                <span>100 %</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="align-left">
+                <span>unary-expression</span>
+              </td>
+              <td>
+                <span>1814</span>
+              </td>
+              <td>
+                <span>100 %</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="align-left">
+                <span>view-body</span>
+              </td>
+              <td>
+                <span>48</span>
+              </td>
+              <td>
+                <span>100 %</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="align-left">
+                <span>view-header</span>
+              </td>
+              <td>
+                <span>48</span>
+              </td>
+              <td>
+                <span>100 %</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="align-left">
+                <span>view-statement</span>
+              </td>
+              <td>
+                <span>48</span>
+              </td>
+              <td>
+                <span>100 %</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+              <td>
+                <span>0</span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>

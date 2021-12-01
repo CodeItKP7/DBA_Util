@@ -1,0 +1,126 @@
+<html>
+<head>
+<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge' />
+<link rel=stylesheet data-name='vs/editor/editor.main' href='../monaco/editor.main.css' type='text/css'>
+<link rel='stylesheet' type='text/css' href='../css/style.css'></link>
+<script type='text/javascript' src='../js/functions.js'></script>
+<script async='async' type='text/javascript' src='../monaco/sql.js'></script>
+<script src='../monaco/loader.js'></script>
+<script src='../monaco/editor.main.nls.js'></script>
+<script src='../monaco/editor.main.js'></script>
+</head>
+<body class='sql-body' id='scrollable-body'>
+<div id='left-side' class='left-side'><div class='panel'>
+<span class='panel-title source'>&nbsp;Source</span>
+<img tabindex='0' aria-label='Previous problem' role='button' class='nav-button nav-button-disabled' id='source_previous_problem' src='../img/previous_problem.gif' onclick='handleProblemButtonClick(-1, true)' title='Previous problem' />
+<img tabindex='0' aria-label='Next problem' role='button' class='nav-button nav-button-disabled' id='source_next_problem' src='../img/next_problem.gif' onclick='handleProblemButtonClick(1, true)' title='Next problem' />
+<img tabindex='0' aria-label='Previous bookmark' role='button' class='nav-button nav-button-disabled' id='source_previous_bookmark' src='../img/previous_bookmark.gif' onclick='handleBookmarkButtonClick(-1, true)' title='Previous bookmark' />
+<img tabindex='0' aria-label='Next bookmark' role='button' class='nav-button nav-button-disabled' id='source_next_bookmark' src='../img/next_bookmark.gif' onclick='handleBookmarkButtonClick(1, true)' title='Next bookmark' />
+<img tabindex='0' aria-label='Clear bookmarks' role='button' class='nav-button nav-button-disabled' id='source_clear_bookmarks' src='../img/clear_bookmarks.gif' onclick='handleBookmarkButtonClick(0, true)' title='Clear bookmarks' />
+<a class='raw-source-link' target='_blank' aria-label='Raw source' href='./src.sql.txt');'>Raw source</a>
+</div>
+<div class='editor-container'>
+<div id='monaco-left-side'></div><pre id='monaco-left-side-sql'>
+CREATE 
+	VIEW LDATATST.OCC_STATUS_REF_VIEW (OCC_PK_ID, OCC_CREATED_TIMESTAMP, OCC_CREATED_BY, OCC_UPDATED_TIMESTAMP, OCC_UPDATED_BY, OCC_STATUS, OCC_TYPE, OCC_DESCRIPTION, OCC_LOANDYNAMIX, OCC_FNMA, OCC_FHLMC, OCC_SFDMS, OCC_RHS, OCC_VALERI, OCC_MILAR, OCC_PROP_INSPEC, OCC_MBA, OCC_SALOMON_BROS)
+		AS 
+			SELECT 
+				ID, 
+				CREATEDTS, 
+				CREATEDBY, 
+				UPDATEDTS, 
+				UPDATEDBY, 
+				STATUS, 
+				TYPE, 
+				OCCDESC, 
+				OCCLD, 
+				OCCFNMA, 
+				OCCFHLMC, 
+				OCCSFDMS, 
+				OCCRHS, 
+				OCCVALERI, 
+				OCCMILAR, 
+				OCCPROPI, 
+				OCCMBA, 
+				OCCSALO
+			FROM LDATATST.OCSTSXRF;</pre></div></div><div id='resize-bar' class='resize-bar'></div><div id='right-side' class='right-side'><div class='panel'>
+<span class='panel-title target'>&nbsp;Target</span>
+<img tabindex='0' aria-label='Previous problem' role='button' class='nav-button nav-button-disabled' id='target_previous_problem' src='../img/previous_problem.gif' onclick='handleProblemButtonClick(-1, false)' title='Previous problem' />
+<img tabindex='0' aria-label='Next problem' role='button' class='nav-button nav-button-disabled' id='target_next_problem' src='../img/next_problem.gif' onclick='handleProblemButtonClick(1, false)' title='Next problem' />
+<img tabindex='0' aria-label='Previous bookmark' role='button' class='nav-button nav-button-disabled' id='target_previous_bookmark' src='../img/previous_bookmark.gif' onclick='handleBookmarkButtonClick(-1, false)' title='Previous bookmark' />
+<img tabindex='0' aria-label='Next bookmark' role='button' class='nav-button nav-button-disabled' id='target_next_bookmark' src='../img/next_bookmark.gif' onclick='handleBookmarkButtonClick(1, false)' title='Next bookmark' />
+<img tabindex='0' aria-label='Clear bookmarks' role='button' class='nav-button nav-button-disabled' id='target_clear_bookmarks' src='../img/clear_bookmarks.gif' onclick='handleBookmarkButtonClick(0, false)' title='Clear bookmarks' />
+</div>
+<div class='editor-container'>
+<div id='monaco-right-side'></div><pre id='monaco-right-side-sql'>
+/* 
+*   SSMA error messages:
+*   DB22SS0083: Identifier ID cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier CREATEDTS cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier CREATEDBY cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier UPDATEDTS cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier UPDATEDBY cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier STATUS cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier "TYPE" cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier OCCDESC cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier OCCLD cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier OCCFNMA cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier OCCFHLMC cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier OCCSFDMS cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier OCCRHS cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier OCCVALERI cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier OCCMILAR cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier OCCPROPI cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier OCCMBA cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier OCCSALO cannot be converted because it was not resolved.
+
+CREATE VIEW LDATATST.OCC_STATUS_REF_VIEW (
+	OCC_PK_ID, 
+	OCC_CREATED_TIMESTAMP, 
+	OCC_CREATED_BY, 
+	OCC_UPDATED_TIMESTAMP, 
+	OCC_UPDATED_BY, 
+	OCC_STATUS, 
+	OCC_TYPE, 
+	OCC_DESCRIPTION, 
+	OCC_LOANDYNAMIX, 
+	OCC_FNMA, 
+	OCC_FHLMC, 
+	OCC_SFDMS, 
+	OCC_RHS, 
+	OCC_VALERI, 
+	OCC_MILAR, 
+	OCC_PROP_INSPEC, 
+	OCC_MBA, 
+	OCC_SALOMON_BROS)
+AS 
+	SELECT 
+		ID, 
+		CREATEDTS, 
+		CREATEDBY, 
+		UPDATEDTS, 
+		UPDATEDBY, 
+		STATUS, 
+		TYPE, 
+		OCCDESC, 
+		OCCLD, 
+		OCCFNMA, 
+		OCCFHLMC, 
+		OCCSFDMS, 
+		OCCRHS, 
+		OCCVALERI, 
+		OCCMILAR, 
+		OCCPROPI, 
+		OCCMBA, 
+		OCCSALO
+	FROM LDATATST.OCSTSXRF
+GO
+*/
+
+</pre></div></div><script>
+var sourceLanguage = 'sql';
+var sourceEditorSelections = [{start:303, end:591, guid:'96ca3486-a2f7-4e1a-966f-e1a6a48dc58f', reflection:['de1468c1-804e-4ab2-9af1-af3b451f79dd'], convmessInfoIds:[], convmessWarningIds:[], convmessErrorIds:[]},{start:0, end:592, guid:'1fdbaa8d-798a-4a2d-b08b-ecd4ba1bc0a5', reflection:['eb6ba73a-8b10-44b2-b8cc-e8dc96266610'], convmessInfoIds:[], convmessWarningIds:[], convmessErrorIds:[]}];
+var targetLanguage = 'sql';
+var targetEditorSelections = [{start:1880, end:2128, guid:'de1468c1-804e-4ab2-9af1-af3b451f79dd', reflection:['96ca3486-a2f7-4e1a-966f-e1a6a48dc58f'], convmessInfoIds:[], convmessWarningIds:[], convmessErrorIds:[]},{start:1545, end:2128, guid:'eb6ba73a-8b10-44b2-b8cc-e8dc96266610', reflection:['1fdbaa8d-798a-4a2d-b08b-ecd4ba1bc0a5'], convmessInfoIds:[], convmessWarningIds:[], convmessErrorIds:[]},{start:0, end:2136, guid:'f1f6f041-a628-4bf1-bab2-473fd0f38aef', reflection:[], convmessInfoIds:[], convmessWarningIds:[], convmessErrorIds:['DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083']}];
+</script><script src='../js/code.js'></script></body></html>

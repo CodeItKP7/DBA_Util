@@ -1,0 +1,43 @@
+
+'Create USER DB folders on SQLMounts
+mkdir -p c:\SQLMounts\Data1\SQLData1
+mkdir -p c:\SQLMounts\Data2\SQLData1
+mkdir -p c:\SQLMounts\Logs1\SQLLogs1
+mkdir -p c:\SQLMounts\Logs2\SQLLogs1
+
+mkdir  c:\SQLMounts\Data2\SQLData1\PublicAPI
+mkdir  c:\SQLMounts\Data2\SQLData1\RollinsBackgroundJobs
+mkdir  c:\SQLMounts\Data2\SQLData1\ServSign
+mkdir  c:\SQLMounts\Data1\SQLData1\ServSuiteData
+mkdir  c:\SQLMounts\Data1\SQLData1\ServSuiteDocument
+mkdir  c:\SQLMounts\Data2\SQLData1\ServSuiteMobile
+mkdir  c:\SQLMounts\Data2\SQLData1\ServSuiteLog
+mkdir  c:\SQLMounts\Data2\SQLData1\ServSuiteReplicaEdits
+mkdir  c:\SQLMounts\Data2\SQLData1\ServSuiteWBProgram
+mkdir  c:\SQLMounts\Data2\SQLData1\ServSuiteWBReport
+mkdir  c:\SQLMounts\Data2\SQLData1\ServSuiteWBUser
+
+mkdir  c:\SQLMounts\Data2\SQLData1\ZenithCommissionsIntegrated
+mkdir  c:\SQLMounts\Data2\SQLData1\ZenithIntegrated
+mkdir  c:\SQLMounts\Data2\SQLData1\AG_SEED
+
+mkdir  c:\SQLMounts\Data2\SQLData1\ServSuiteWBUser
+mkdir  c:\SQLMounts\Data2\SQLData1\ServSuiteWBUser
+mkdir  c:\SQLMounts\Logs2\SQLLogs1\PublicAPI
+mkdir  c:\SQLMounts\Logs2\SQLLogs1\RollinsBackgroundJobs
+mkdir  c:\SQLMounts\Logs2\SQLLogs1\ServSign
+mkdir  c:\SQLMounts\Logs1\SQLLogs1\ServSuiteData
+mkdir  c:\SQLMounts\Logs1\SQLLogs1\ServSuiteDocument
+mkdir  c:\SQLMounts\Logs2\SQLLogs1\ServSuiteMobile
+mkdir  c:\SQLMounts\Logs2\SQLLogs1\ServSuiteLog
+mkdir  c:\SQLMounts\Logs2\SQLLogs1\ServSuiteReplicaEdits
+mkdir  c:\SQLMounts\Logs2\SQLLogs1\ServSuiteWBProgram
+mkdir  c:\SQLMounts\Logs2\SQLLogs1\ServSuiteWBReport
+mkdir  c:\SQLMounts\Logs2\SQLLogs1\ServSuiteWBUser
+
+mkdir  c:\SQLMounts\Logs2\SQLLogs1\ZenithCommissionsIntegrated
+mkdir  c:\SQLMounts\Logs2\SQLLogs1\ZenithIntegrated
+mkdir  c:\SQLMounts\Logs2\SQLLogs1\AG_SEED
+
+
+

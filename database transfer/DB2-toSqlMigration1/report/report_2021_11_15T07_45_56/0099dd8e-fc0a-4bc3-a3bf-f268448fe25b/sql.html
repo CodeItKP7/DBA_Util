@@ -1,0 +1,166 @@
+<html>
+<head>
+<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge' />
+<link rel=stylesheet data-name='vs/editor/editor.main' href='../monaco/editor.main.css' type='text/css'>
+<link rel='stylesheet' type='text/css' href='../css/style.css'></link>
+<script type='text/javascript' src='../js/functions.js'></script>
+<script async='async' type='text/javascript' src='../monaco/sql.js'></script>
+<script src='../monaco/loader.js'></script>
+<script src='../monaco/editor.main.nls.js'></script>
+<script src='../monaco/editor.main.js'></script>
+</head>
+<body class='sql-body' id='scrollable-body'>
+<div id='left-side' class='left-side'><div class='panel'>
+<span class='panel-title source'>&nbsp;Source</span>
+<img tabindex='0' aria-label='Previous problem' role='button' class='nav-button nav-button-disabled' id='source_previous_problem' src='../img/previous_problem.gif' onclick='handleProblemButtonClick(-1, true)' title='Previous problem' />
+<img tabindex='0' aria-label='Next problem' role='button' class='nav-button nav-button-disabled' id='source_next_problem' src='../img/next_problem.gif' onclick='handleProblemButtonClick(1, true)' title='Next problem' />
+<img tabindex='0' aria-label='Previous bookmark' role='button' class='nav-button nav-button-disabled' id='source_previous_bookmark' src='../img/previous_bookmark.gif' onclick='handleBookmarkButtonClick(-1, true)' title='Previous bookmark' />
+<img tabindex='0' aria-label='Next bookmark' role='button' class='nav-button nav-button-disabled' id='source_next_bookmark' src='../img/next_bookmark.gif' onclick='handleBookmarkButtonClick(1, true)' title='Next bookmark' />
+<img tabindex='0' aria-label='Clear bookmarks' role='button' class='nav-button nav-button-disabled' id='source_clear_bookmarks' src='../img/clear_bookmarks.gif' onclick='handleBookmarkButtonClick(0, true)' title='Clear bookmarks' />
+<a class='raw-source-link' target='_blank' aria-label='Raw source' href='./src.sql.txt');'>Raw source</a>
+</div>
+<div class='editor-container'>
+<div id='monaco-left-side'></div><pre id='monaco-left-side-sql'>
+CREATE 
+	VIEW LDATATST.RHHADVIV (AD_ID, CREATED_TIMESTAMP, CREATED_BY, UPDATED_TIMESTAMP, UPDATED_BY, AD_PROCESS, AD_STATUS, LENDER_BRNCH_NO, LENDER_TAX_ID, BORROWER_NAME, USDA_BORROWER_ID, BORROWER_SSN, LENDER_LOAN_NO, USDA_LOAN_ID, PROPERTY_ADD_LN1, PROPERTY_ADD_LN2, PROPERTY_ADD_LN3, PROPERTY_CITY, PROPERTY_STATE, PROPERTY_ZIP, PROPERTY_ZIP4, CHG_PREMIUM_PERIOD, NOTICE_TYPE, BEG_AMRT_DATE, ANN_FEEAMT, MONTHLY_FEEAMT, NOTICE_DATE, DUE_DATE)
+		AS 
+			SELECT 
+				ID, 
+				CREATEDTS, 
+				CREATEDBY, 
+				UPDATEDTS, 
+				UPDATEDBY, 
+				PROCESS, 
+				STATUS, 
+				LNDBRNO, 
+				LNDTXID, 
+				BORNM, 
+				USDABORID, 
+				BORSSN, 
+				LNDLNNO, 
+				USDALNID, 
+				PRPADDLN1, 
+				PRPADDLN2, 
+				PRPADDLN3, 
+				PRPCITY, 
+				PRPSTAT, 
+				PRPZIP, 
+				PRPZIP4, 
+				CHPMPERIOD, 
+				NOTICETYP, 
+				BEGAMDT, 
+				ANFEEAMT, 
+				MNTFEEAMT, 
+				NOTICEDT, 
+				DUEDT
+			FROM LDATATST.RHHADVI;</pre></div></div><div id='resize-bar' class='resize-bar'></div><div id='right-side' class='right-side'><div class='panel'>
+<span class='panel-title target'>&nbsp;Target</span>
+<img tabindex='0' aria-label='Previous problem' role='button' class='nav-button nav-button-disabled' id='target_previous_problem' src='../img/previous_problem.gif' onclick='handleProblemButtonClick(-1, false)' title='Previous problem' />
+<img tabindex='0' aria-label='Next problem' role='button' class='nav-button nav-button-disabled' id='target_next_problem' src='../img/next_problem.gif' onclick='handleProblemButtonClick(1, false)' title='Next problem' />
+<img tabindex='0' aria-label='Previous bookmark' role='button' class='nav-button nav-button-disabled' id='target_previous_bookmark' src='../img/previous_bookmark.gif' onclick='handleBookmarkButtonClick(-1, false)' title='Previous bookmark' />
+<img tabindex='0' aria-label='Next bookmark' role='button' class='nav-button nav-button-disabled' id='target_next_bookmark' src='../img/next_bookmark.gif' onclick='handleBookmarkButtonClick(1, false)' title='Next bookmark' />
+<img tabindex='0' aria-label='Clear bookmarks' role='button' class='nav-button nav-button-disabled' id='target_clear_bookmarks' src='../img/clear_bookmarks.gif' onclick='handleBookmarkButtonClick(0, false)' title='Clear bookmarks' />
+</div>
+<div class='editor-container'>
+<div id='monaco-right-side'></div><pre id='monaco-right-side-sql'>
+/* 
+*   SSMA error messages:
+*   DB22SS0083: Identifier ID cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier CREATEDTS cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier CREATEDBY cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier UPDATEDTS cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier UPDATEDBY cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PROCESS cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier STATUS cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier LNDBRNO cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier LNDTXID cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier BORNM cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier USDABORID cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier BORSSN cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier LNDLNNO cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier USDALNID cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PRPADDLN1 cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PRPADDLN2 cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PRPADDLN3 cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PRPCITY cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PRPSTAT cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PRPZIP cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PRPZIP4 cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier CHPMPERIOD cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier NOTICETYP cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier BEGAMDT cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier ANFEEAMT cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier MNTFEEAMT cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier NOTICEDT cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier DUEDT cannot be converted because it was not resolved.
+
+CREATE VIEW LDATATST.RHHADVIV (
+	AD_ID, 
+	CREATED_TIMESTAMP, 
+	CREATED_BY, 
+	UPDATED_TIMESTAMP, 
+	UPDATED_BY, 
+	AD_PROCESS, 
+	AD_STATUS, 
+	LENDER_BRNCH_NO, 
+	LENDER_TAX_ID, 
+	BORROWER_NAME, 
+	USDA_BORROWER_ID, 
+	BORROWER_SSN, 
+	LENDER_LOAN_NO, 
+	USDA_LOAN_ID, 
+	PROPERTY_ADD_LN1, 
+	PROPERTY_ADD_LN2, 
+	PROPERTY_ADD_LN3, 
+	PROPERTY_CITY, 
+	PROPERTY_STATE, 
+	PROPERTY_ZIP, 
+	PROPERTY_ZIP4, 
+	CHG_PREMIUM_PERIOD, 
+	NOTICE_TYPE, 
+	BEG_AMRT_DATE, 
+	ANN_FEEAMT, 
+	MONTHLY_FEEAMT, 
+	NOTICE_DATE, 
+	DUE_DATE)
+AS 
+	SELECT 
+		ID, 
+		CREATEDTS, 
+		CREATEDBY, 
+		UPDATEDTS, 
+		UPDATEDBY, 
+		PROCESS, 
+		STATUS, 
+		LNDBRNO, 
+		LNDTXID, 
+		BORNM, 
+		USDABORID, 
+		BORSSN, 
+		LNDLNNO, 
+		USDALNID, 
+		PRPADDLN1, 
+		PRPADDLN2, 
+		PRPADDLN3, 
+		PRPCITY, 
+		PRPSTAT, 
+		PRPZIP, 
+		PRPZIP4, 
+		CHPMPERIOD, 
+		NOTICETYP, 
+		BEGAMDT, 
+		ANFEEAMT, 
+		MNTFEEAMT, 
+		NOTICEDT, 
+		DUEDT
+	FROM LDATATST.RHHADVI
+GO
+*/
+
+</pre></div></div><script>
+var sourceLanguage = 'sql';
+var sourceEditorSelections = [{start:453, end:893, guid:'15b24b33-5b20-4fc0-a46c-00dccfd4bd6e', reflection:['1673447e-b3bd-4b46-ab81-7c0fe63653ff'], convmessInfoIds:[], convmessWarningIds:[], convmessErrorIds:[]},{start:0, end:894, guid:'dd5b2d11-9a8e-492f-92c9-903267a48287', reflection:['19e6f1fe-f510-4d80-be16-45bd9e67294b'], convmessInfoIds:[], convmessWarningIds:[], convmessErrorIds:[]}];
+var targetLanguage = 'sql';
+var targetEditorSelections = [{start:2901, end:3281, guid:'1673447e-b3bd-4b46-ab81-7c0fe63653ff', reflection:['15b24b33-5b20-4fc0-a46c-00dccfd4bd6e'], convmessInfoIds:[], convmessWarningIds:[], convmessErrorIds:[]},{start:2396, end:3281, guid:'19e6f1fe-f510-4d80-be16-45bd9e67294b', reflection:['dd5b2d11-9a8e-492f-92c9-903267a48287'], convmessInfoIds:[], convmessWarningIds:[], convmessErrorIds:[]},{start:0, end:3289, guid:'3e98b758-47ab-4c4d-80b6-06944af66c32', reflection:[], convmessInfoIds:[], convmessWarningIds:[], convmessErrorIds:['DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083']}];
+</script><script src='../js/code.js'></script></body></html>

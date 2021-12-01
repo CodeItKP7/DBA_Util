@@ -1,0 +1,40 @@
+$profile
+$env:ALLUSERSPROFILE
+$env:PSModulePath
+$env:HOMEPATH
+$env:USERPROFILE
+
+-- find uptime for each SQL server node name
+C:\PowerSh\Rollins\DBA_Admin\Script_Files\OS_functions\
+.\getServerUptime.ps1
+.\getServerUptime.ps1 -NumberOfDays 365
+.\getServerUptime.ps1 -NumberOfDays 365 -ComputerName OWSQLDDMO201 | format-table -AutoSize
+
+-- ping test for each node
+C:\PowerSh\Rollins\DBA_Admin\Script_Files\OS_functions\
+.\PingTest.ps1
+
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules -- v1.0 modules
+C:\Program Files\WindowsPowerShell\Modules -- my modules
+C:\Users\ssubrahm\Documents\WindowsPowerShell -- profiles
+
+get-module -ListAvailable | format-table -AutoSize ;
+Remove-Module OSfunctions -Verbose ## this version of PS
+Import-Module OSfunctions -Verbose ## this version of PS
+
+set-location "C:\Users\ssubrahm\Documents\WindowsPowerShell\Modules\Microsoft.WSMan.Management"
+set-location "C:\PowerSH\Rollins"
+Import-Module Microsoft.WSMan.Management
+Import-Module -Name C:\Program Files\WindowsPowerShell\Modules\OSfunctions -Verbose
+
+get-module -FullyQualifiedName Microsoft.WSMan.Management
+Remove-Module -Name OSfunctions -Verbose
+uninstall-module -Name OSfunctions -Verbose
+
+$s = "RWBDBAGH211"
+$wsman = Test-WSMan -ComputerName $s -ApplicationName WSMAN -ErrorAction 0 -Authentication default;
+#if ($wsman -eq $null) { write-host "WinRM is not installed.";  Get-Uptime -ComputerName $s; };
+#if ($wsman -ne $null)  { .\getServerUptime.ps1 -NumberOfDays 365 -ComputerName $s | format-table -AutoSize ; };
+if ($wsman -eq $null) { write-host "WinRM is not installed." -ForegroundColor Red;   };
+if ($wsman -ne $null)  { write-host "WinRM is installed." -ForegroundColor Yellow; };
+

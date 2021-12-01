@@ -1,0 +1,202 @@
+<html>
+<head>
+<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge' />
+<link rel=stylesheet data-name='vs/editor/editor.main' href='../monaco/editor.main.css' type='text/css'>
+<link rel='stylesheet' type='text/css' href='../css/style.css'></link>
+<script type='text/javascript' src='../js/functions.js'></script>
+<script async='async' type='text/javascript' src='../monaco/sql.js'></script>
+<script src='../monaco/loader.js'></script>
+<script src='../monaco/editor.main.nls.js'></script>
+<script src='../monaco/editor.main.js'></script>
+</head>
+<body class='sql-body' id='scrollable-body'>
+<div id='left-side' class='left-side'><div class='panel'>
+<span class='panel-title source'>&nbsp;Source</span>
+<img tabindex='0' aria-label='Previous problem' role='button' class='nav-button nav-button-disabled' id='source_previous_problem' src='../img/previous_problem.gif' onclick='handleProblemButtonClick(-1, true)' title='Previous problem' />
+<img tabindex='0' aria-label='Next problem' role='button' class='nav-button nav-button-disabled' id='source_next_problem' src='../img/next_problem.gif' onclick='handleProblemButtonClick(1, true)' title='Next problem' />
+<img tabindex='0' aria-label='Previous bookmark' role='button' class='nav-button nav-button-disabled' id='source_previous_bookmark' src='../img/previous_bookmark.gif' onclick='handleBookmarkButtonClick(-1, true)' title='Previous bookmark' />
+<img tabindex='0' aria-label='Next bookmark' role='button' class='nav-button nav-button-disabled' id='source_next_bookmark' src='../img/next_bookmark.gif' onclick='handleBookmarkButtonClick(1, true)' title='Next bookmark' />
+<img tabindex='0' aria-label='Clear bookmarks' role='button' class='nav-button nav-button-disabled' id='source_clear_bookmarks' src='../img/clear_bookmarks.gif' onclick='handleBookmarkButtonClick(0, true)' title='Clear bookmarks' />
+<a class='raw-source-link' target='_blank' aria-label='Raw source' href='./src.sql.txt');'>Raw source</a>
+</div>
+<div class='editor-container'>
+<div id='monaco-left-side'></div><pre id='monaco-left-side-sql'>
+CREATE 
+	VIEW LDATATST.IVRMCTRL_VIEW (IRC_ID, IRC_CREATEDTS, IRC_CREATEDBY, IRC_UPDATEDTS, IRC_UPDATEDBY, IRC_STATUS, IRC_TYPE, IRC_SUBSERVICER_ID, IRC_INVESTOR_NO, IRC_INVESTOR_TYPE, IRC_CONTRACT_TYPE, IRC_REMIT_PI_FLAG, IRC_WAREHOUSE_FLAG, IRC_LOSS_MIT_AMT, IRC_FCL_BKR_AMT, IRC_REO_AMT, IRC_ACH_CREDIT, IRC_SURCHARGE_0_100_LNS, IRC_SURCHARGE_101_250_LNS, IRC_CHG_DELQ_60OR90_FLAG, IRC_CHG_DELQ_60OR90_AMT, IRC_CHG_DELQ_30_FLAG, IRC_CHG_DELQ_30_AMT, IRC_CHG_30_THRESHOLD, IRC_CHG_NL_FEE_FLAG, IRC_NEW_LOAN_FEE_AMT, IRC_REMIT_ACH_FLAG, IRC_REMIT_PO_IMMED_FLAG, IRC_TX_CODE_FT_PI_INT, IRC_TX_CODE_FT_PI_SVC, IRC_TX_CODE_FT_TI_INT, IRC_TX_CODE_FT_TI_SVC, IRC_IDEA_ADJ_PRIME, IRC_PMT_CLEAR_BANK, IRC_PMT_CLEAR_ACCT, IRC_FILE_SETTLE_INV, IRC_REVIEW_DATE)
+		AS 
+			SELECT 
+				ID, 
+				CREATEDTS, 
+				CREATEDBY, 
+				UPDATEDTS, 
+				UPDATEDBY, 
+				STATUS, 
+				TYPE, 
+				SUBSRVID, 
+				INVNO, 
+				INVTYP, 
+				CONTRTYP, 
+				REMPIFL, 
+				WARHOUFL, 
+				LOSMITAM, 
+				FCLBKRAM, 
+				REOAM, 
+				ACHCRAM, 
+				SURLNS1, 
+				SURLNS2, 
+				CHDLQFL1, 
+				CHDLQAM1, 
+				CHDLQFL2, 
+				CHDLQAM2, 
+				CHTHRESH, 
+				CHNLFEFL, 
+				CHNLFEAM, 
+				REMACHFL, 
+				REMPOIFL, 
+				TXFTPIINT, 
+				TXFTPISVC, 
+				TXFTTIINT, 
+				TXFTTISVC, 
+				IDEADJPR, 
+				PMTCLRBK, 
+				PMTCLRAC, 
+				FILSETIV, 
+				REVIEWDT
+			FROM LDATATST.IVRMCTRL;</pre></div></div><div id='resize-bar' class='resize-bar'></div><div id='right-side' class='right-side'><div class='panel'>
+<span class='panel-title target'>&nbsp;Target</span>
+<img tabindex='0' aria-label='Previous problem' role='button' class='nav-button nav-button-disabled' id='target_previous_problem' src='../img/previous_problem.gif' onclick='handleProblemButtonClick(-1, false)' title='Previous problem' />
+<img tabindex='0' aria-label='Next problem' role='button' class='nav-button nav-button-disabled' id='target_next_problem' src='../img/next_problem.gif' onclick='handleProblemButtonClick(1, false)' title='Next problem' />
+<img tabindex='0' aria-label='Previous bookmark' role='button' class='nav-button nav-button-disabled' id='target_previous_bookmark' src='../img/previous_bookmark.gif' onclick='handleBookmarkButtonClick(-1, false)' title='Previous bookmark' />
+<img tabindex='0' aria-label='Next bookmark' role='button' class='nav-button nav-button-disabled' id='target_next_bookmark' src='../img/next_bookmark.gif' onclick='handleBookmarkButtonClick(1, false)' title='Next bookmark' />
+<img tabindex='0' aria-label='Clear bookmarks' role='button' class='nav-button nav-button-disabled' id='target_clear_bookmarks' src='../img/clear_bookmarks.gif' onclick='handleBookmarkButtonClick(0, false)' title='Clear bookmarks' />
+</div>
+<div class='editor-container'>
+<div id='monaco-right-side'></div><pre id='monaco-right-side-sql'>
+/* 
+*   SSMA error messages:
+*   DB22SS0083: Identifier ID cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier CREATEDTS cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier CREATEDBY cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier UPDATEDTS cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier UPDATEDBY cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier STATUS cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier "TYPE" cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier SUBSRVID cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier INVNO cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier INVTYP cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier CONTRTYP cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier REMPIFL cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier WARHOUFL cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier LOSMITAM cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier FCLBKRAM cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier REOAM cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier ACHCRAM cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier SURLNS1 cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier SURLNS2 cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier CHDLQFL1 cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier CHDLQAM1 cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier CHDLQFL2 cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier CHDLQAM2 cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier CHTHRESH cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier CHNLFEFL cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier CHNLFEAM cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier REMACHFL cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier REMPOIFL cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier TXFTPIINT cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier TXFTPISVC cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier TXFTTIINT cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier TXFTTISVC cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier IDEADJPR cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PMTCLRBK cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PMTCLRAC cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier FILSETIV cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier REVIEWDT cannot be converted because it was not resolved.
+
+CREATE VIEW LDATATST.IVRMCTRL_VIEW (
+	IRC_ID, 
+	IRC_CREATEDTS, 
+	IRC_CREATEDBY, 
+	IRC_UPDATEDTS, 
+	IRC_UPDATEDBY, 
+	IRC_STATUS, 
+	IRC_TYPE, 
+	IRC_SUBSERVICER_ID, 
+	IRC_INVESTOR_NO, 
+	IRC_INVESTOR_TYPE, 
+	IRC_CONTRACT_TYPE, 
+	IRC_REMIT_PI_FLAG, 
+	IRC_WAREHOUSE_FLAG, 
+	IRC_LOSS_MIT_AMT, 
+	IRC_FCL_BKR_AMT, 
+	IRC_REO_AMT, 
+	IRC_ACH_CREDIT, 
+	IRC_SURCHARGE_0_100_LNS, 
+	IRC_SURCHARGE_101_250_LNS, 
+	IRC_CHG_DELQ_60OR90_FLAG, 
+	IRC_CHG_DELQ_60OR90_AMT, 
+	IRC_CHG_DELQ_30_FLAG, 
+	IRC_CHG_DELQ_30_AMT, 
+	IRC_CHG_30_THRESHOLD, 
+	IRC_CHG_NL_FEE_FLAG, 
+	IRC_NEW_LOAN_FEE_AMT, 
+	IRC_REMIT_ACH_FLAG, 
+	IRC_REMIT_PO_IMMED_FLAG, 
+	IRC_TX_CODE_FT_PI_INT, 
+	IRC_TX_CODE_FT_PI_SVC, 
+	IRC_TX_CODE_FT_TI_INT, 
+	IRC_TX_CODE_FT_TI_SVC, 
+	IRC_IDEA_ADJ_PRIME, 
+	IRC_PMT_CLEAR_BANK, 
+	IRC_PMT_CLEAR_ACCT, 
+	IRC_FILE_SETTLE_INV, 
+	IRC_REVIEW_DATE)
+AS 
+	SELECT 
+		ID, 
+		CREATEDTS, 
+		CREATEDBY, 
+		UPDATEDTS, 
+		UPDATEDBY, 
+		STATUS, 
+		TYPE, 
+		SUBSRVID, 
+		INVNO, 
+		INVTYP, 
+		CONTRTYP, 
+		REMPIFL, 
+		WARHOUFL, 
+		LOSMITAM, 
+		FCLBKRAM, 
+		REOAM, 
+		ACHCRAM, 
+		SURLNS1, 
+		SURLNS2, 
+		CHDLQFL1, 
+		CHDLQAM1, 
+		CHDLQFL2, 
+		CHDLQAM2, 
+		CHTHRESH, 
+		CHNLFEFL, 
+		CHNLFEAM, 
+		REMACHFL, 
+		REMPOIFL, 
+		TXFTPIINT, 
+		TXFTPISVC, 
+		TXFTTIINT, 
+		TXFTTISVC, 
+		IDEADJPR, 
+		PMTCLRBK, 
+		PMTCLRAC, 
+		FILSETIV, 
+		REVIEWDT
+	FROM LDATATST.IVRMCTRL
+GO
+*/
+
+</pre></div></div><script>
+var sourceLanguage = 'sql';
+var sourceEditorSelections = [{start:758, end:1332, guid:'833dfff4-dc48-47fb-951a-bfc5e41175e1', reflection:['a8c80e15-ed23-4bdb-b025-f6a39165cbcb'], convmessInfoIds:[], convmessWarningIds:[], convmessErrorIds:[]},{start:0, end:1333, guid:'17c39d46-8408-41c2-889d-3dc9169d9cb5', reflection:['88326914-bf88-465b-8504-40a9b9ab39ae'], convmessInfoIds:[], convmessWarningIds:[], convmessErrorIds:[]}];
+var targetLanguage = 'sql';
+var targetEditorSelections = [{start:3989, end:4485, guid:'a8c80e15-ed23-4bdb-b025-f6a39165cbcb', reflection:['833dfff4-dc48-47fb-951a-bfc5e41175e1'], convmessInfoIds:[], convmessWarningIds:[], convmessErrorIds:[]},{start:3161, end:4485, guid:'88326914-bf88-465b-8504-40a9b9ab39ae', reflection:['17c39d46-8408-41c2-889d-3dc9169d9cb5'], convmessInfoIds:[], convmessWarningIds:[], convmessErrorIds:[]},{start:0, end:4493, guid:'3f80009a-8c88-4f4a-bcec-0eafcedb8eac', reflection:[], convmessInfoIds:[], convmessWarningIds:[], convmessErrorIds:['DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083']}];
+</script><script src='../js/code.js'></script></body></html>

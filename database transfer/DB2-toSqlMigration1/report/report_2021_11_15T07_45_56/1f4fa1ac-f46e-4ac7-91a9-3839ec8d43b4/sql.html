@@ -1,0 +1,246 @@
+<html>
+<head>
+<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge' />
+<link rel=stylesheet data-name='vs/editor/editor.main' href='../monaco/editor.main.css' type='text/css'>
+<link rel='stylesheet' type='text/css' href='../css/style.css'></link>
+<script type='text/javascript' src='../js/functions.js'></script>
+<script async='async' type='text/javascript' src='../monaco/sql.js'></script>
+<script src='../monaco/loader.js'></script>
+<script src='../monaco/editor.main.nls.js'></script>
+<script src='../monaco/editor.main.js'></script>
+</head>
+<body class='sql-body' id='scrollable-body'>
+<div id='left-side' class='left-side'><div class='panel'>
+<span class='panel-title source'>&nbsp;Source</span>
+<img tabindex='0' aria-label='Previous problem' role='button' class='nav-button nav-button-disabled' id='source_previous_problem' src='../img/previous_problem.gif' onclick='handleProblemButtonClick(-1, true)' title='Previous problem' />
+<img tabindex='0' aria-label='Next problem' role='button' class='nav-button nav-button-disabled' id='source_next_problem' src='../img/next_problem.gif' onclick='handleProblemButtonClick(1, true)' title='Next problem' />
+<img tabindex='0' aria-label='Previous bookmark' role='button' class='nav-button nav-button-disabled' id='source_previous_bookmark' src='../img/previous_bookmark.gif' onclick='handleBookmarkButtonClick(-1, true)' title='Previous bookmark' />
+<img tabindex='0' aria-label='Next bookmark' role='button' class='nav-button nav-button-disabled' id='source_next_bookmark' src='../img/next_bookmark.gif' onclick='handleBookmarkButtonClick(1, true)' title='Next bookmark' />
+<img tabindex='0' aria-label='Clear bookmarks' role='button' class='nav-button nav-button-disabled' id='source_clear_bookmarks' src='../img/clear_bookmarks.gif' onclick='handleBookmarkButtonClick(0, true)' title='Clear bookmarks' />
+<a class='raw-source-link' target='_blank' aria-label='Raw source' href='./src.sql.txt');'>Raw source</a>
+</div>
+<div class='editor-container'>
+<div id='monaco-left-side'></div><pre id='monaco-left-side-sql'>
+CREATE 
+	VIEW LDATATST.LNESCEV (ESC_ID, ESC_CREATEDTS, ESC_CREATED_BY, ESC_UPDATEDTS, ESC_UPDATED_BY, ESC_TYPE1, ESC_STATUS1, ESC_LN_NUM, ESC_TYPE, ESC_CODE, ESC_STATUS, ESC_AN_DATE_MO, ESC_AN_DATE_DA, ESC_AN_DATE_YR, ESC_NUM_MO_COV, ESC_VENDOR_NB, ESC_AGENT_NB, ESC_V_POL_NB, ESC_CUST_NB, ESC_COVER_AMT, ESC_ANALYSIS, ESC_ANALYSYS_AMT, ESC_TIC_MO, ESC_TIC_DA, ESC_TIC_YR, ESC_TIC_AMT, ESC_BATCH, ESC_MAT_DT_MO, ESC_MAT_DT_DA, ESC_MAT_DT_YR, ESC_PAY_AMT, ESC_PAY_DT_MO, ESC_PAY_DT_DA, ESC_PAY_DT_YR, ESC_PREV_ANALYSIS, ESC_REMIT_CD, ESC_TY, ESC_CONTROL_FLAG, ESC_INSTAL_CD, ESC_TICCD, ESC_DELETE, ESC_USER_CODE, ESC_COMMENTS, ESC_PMI_FLAG, ESC_ADEQUATE_COV, ESC_REPLACEMENT_COV, ESC_LETTER_SENT, ESC_REPLACEMENT_AMT)
+		AS 
+			SELECT 
+				ID, 
+				CREATEDTS, 
+				CREATEDBY, 
+				UPDATEDTS, 
+				UPDATEDBY, 
+				TYPE, 
+				STATUS, 
+				LOAN, 
+				RECTYP, 
+				SEQNO, 
+				STATUS, 
+				ANDAMO, 
+				ANDADA, 
+				ANDAYR, 
+				MONTHS, 
+				VENDOR, 
+				AGENT, 
+				VENREF, 
+				CUSTNR, 
+				COVERG, 
+				ANALYS, 
+				ANLAMT, 
+				TICMO, 
+				TICDA, 
+				TICYR, 
+				TICAMT, 
+				BATCH, 
+				EMATMO, 
+				EMATDA, 
+				EMATYR, 
+				PMTAMT, 
+				EPAYMO, 
+				EPAYDA, 
+				EPAYYR, 
+				PREVAM, 
+				REMIT, 
+				ESCTYP, 
+				MCTLFL, 
+				INSTCD, 
+				TICCD, 
+				DELETE, 
+				ESUSCD, 
+				ESCOMM, 
+				ESPMIP, 
+				ADQCOV, 
+				RPLCOV, 
+				LTRSNT, 
+				RPLAMT
+			FROM LDATATST.LNESCE;</pre></div></div><div id='resize-bar' class='resize-bar'></div><div id='right-side' class='right-side'><div class='panel'>
+<span class='panel-title target'>&nbsp;Target</span>
+<img tabindex='0' aria-label='Previous problem' role='button' class='nav-button nav-button-disabled' id='target_previous_problem' src='../img/previous_problem.gif' onclick='handleProblemButtonClick(-1, false)' title='Previous problem' />
+<img tabindex='0' aria-label='Next problem' role='button' class='nav-button nav-button-disabled' id='target_next_problem' src='../img/next_problem.gif' onclick='handleProblemButtonClick(1, false)' title='Next problem' />
+<img tabindex='0' aria-label='Previous bookmark' role='button' class='nav-button nav-button-disabled' id='target_previous_bookmark' src='../img/previous_bookmark.gif' onclick='handleBookmarkButtonClick(-1, false)' title='Previous bookmark' />
+<img tabindex='0' aria-label='Next bookmark' role='button' class='nav-button nav-button-disabled' id='target_next_bookmark' src='../img/next_bookmark.gif' onclick='handleBookmarkButtonClick(1, false)' title='Next bookmark' />
+<img tabindex='0' aria-label='Clear bookmarks' role='button' class='nav-button nav-button-disabled' id='target_clear_bookmarks' src='../img/clear_bookmarks.gif' onclick='handleBookmarkButtonClick(0, false)' title='Clear bookmarks' />
+</div>
+<div class='editor-container'>
+<div id='monaco-right-side'></div><pre id='monaco-right-side-sql'>
+/* 
+*   SSMA error messages:
+*   DB22SS0083: Identifier ID cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier CREATEDTS cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier CREATEDBY cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier UPDATEDTS cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier UPDATEDBY cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier "TYPE" cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier STATUS cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier LOAN cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier RECTYP cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier SEQNO cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier STATUS cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier ANDAMO cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier ANDADA cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier ANDAYR cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier MONTHS cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier VENDOR cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier AGENT cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier VENREF cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier CUSTNR cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier COVERG cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier ANALYS cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier ANLAMT cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier TICMO cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier TICDA cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier TICYR cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier TICAMT cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier BATCH cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier EMATMO cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier EMATDA cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier EMATYR cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PMTAMT cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier EPAYMO cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier EPAYDA cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier EPAYYR cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PREVAM cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier REMIT cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier ESCTYP cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier MCTLFL cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier INSTCD cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier TICCD cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier "DELETE" cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier ESUSCD cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier ESCOMM cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier ESPMIP cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier ADQCOV cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier RPLCOV cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier LTRSNT cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier RPLAMT cannot be converted because it was not resolved.
+
+CREATE VIEW LDATATST.LNESCEV (
+	ESC_ID, 
+	ESC_CREATEDTS, 
+	ESC_CREATED_BY, 
+	ESC_UPDATEDTS, 
+	ESC_UPDATED_BY, 
+	ESC_TYPE1, 
+	ESC_STATUS1, 
+	ESC_LN_NUM, 
+	ESC_TYPE, 
+	ESC_CODE, 
+	ESC_STATUS, 
+	ESC_AN_DATE_MO, 
+	ESC_AN_DATE_DA, 
+	ESC_AN_DATE_YR, 
+	ESC_NUM_MO_COV, 
+	ESC_VENDOR_NB, 
+	ESC_AGENT_NB, 
+	ESC_V_POL_NB, 
+	ESC_CUST_NB, 
+	ESC_COVER_AMT, 
+	ESC_ANALYSIS, 
+	ESC_ANALYSYS_AMT, 
+	ESC_TIC_MO, 
+	ESC_TIC_DA, 
+	ESC_TIC_YR, 
+	ESC_TIC_AMT, 
+	ESC_BATCH, 
+	ESC_MAT_DT_MO, 
+	ESC_MAT_DT_DA, 
+	ESC_MAT_DT_YR, 
+	ESC_PAY_AMT, 
+	ESC_PAY_DT_MO, 
+	ESC_PAY_DT_DA, 
+	ESC_PAY_DT_YR, 
+	ESC_PREV_ANALYSIS, 
+	ESC_REMIT_CD, 
+	ESC_TY, 
+	ESC_CONTROL_FLAG, 
+	ESC_INSTAL_CD, 
+	ESC_TICCD, 
+	ESC_DELETE, 
+	ESC_USER_CODE, 
+	ESC_COMMENTS, 
+	ESC_PMI_FLAG, 
+	ESC_ADEQUATE_COV, 
+	ESC_REPLACEMENT_COV, 
+	ESC_LETTER_SENT, 
+	ESC_REPLACEMENT_AMT)
+AS 
+	SELECT 
+		ID, 
+		CREATEDTS, 
+		CREATEDBY, 
+		UPDATEDTS, 
+		UPDATEDBY, 
+		TYPE, 
+		STATUS, 
+		LOAN, 
+		RECTYP, 
+		SEQNO, 
+		STATUS, 
+		ANDAMO, 
+		ANDADA, 
+		ANDAYR, 
+		MONTHS, 
+		VENDOR, 
+		AGENT, 
+		VENREF, 
+		CUSTNR, 
+		COVERG, 
+		ANALYS, 
+		ANLAMT, 
+		TICMO, 
+		TICDA, 
+		TICYR, 
+		TICAMT, 
+		BATCH, 
+		EMATMO, 
+		EMATDA, 
+		EMATYR, 
+		PMTAMT, 
+		EPAYMO, 
+		EPAYDA, 
+		EPAYYR, 
+		PREVAM, 
+		REMIT, 
+		ESCTYP, 
+		MCTLFL, 
+		INSTCD, 
+		TICCD, 
+		DELETE, 
+		ESUSCD, 
+		ESCOMM, 
+		ESPMIP, 
+		ADQCOV, 
+		RPLCOV, 
+		LTRSNT, 
+		RPLAMT
+	FROM LDATATST.LNESCE
+GO
+*/
+
+</pre></div></div><script>
+var sourceLanguage = 'sql';
+var sourceEditorSelections = [{start:723, end:1376, guid:'50dd1bff-6a6f-40c6-bb66-6538cd5a4f15', reflection:['bcf5ef4c-0444-421f-af24-1a0f7170b4e8'], convmessInfoIds:[], convmessWarningIds:[], convmessErrorIds:[]},{start:0, end:1377, guid:'4f3bd6ed-52b4-41aa-8afa-63ae84526d8b', reflection:['d71f2709-093c-404b-8f71-687a05353065'], convmessInfoIds:[], convmessWarningIds:[], convmessErrorIds:[]}];
+var targetLanguage = 'sql';
+var targetEditorSelections = [{start:4829, end:5382, guid:'bcf5ef4c-0444-421f-af24-1a0f7170b4e8', reflection:['50dd1bff-6a6f-40c6-bb66-6538cd5a4f15'], convmessInfoIds:[], convmessWarningIds:[], convmessErrorIds:[]},{start:4014, end:5382, guid:'d71f2709-093c-404b-8f71-687a05353065', reflection:['4f3bd6ed-52b4-41aa-8afa-63ae84526d8b'], convmessInfoIds:[], convmessWarningIds:[], convmessErrorIds:[]},{start:0, end:5390, guid:'33e263e9-78e9-4243-bde7-c6982cc7eb65', reflection:[], convmessInfoIds:[], convmessWarningIds:[], convmessErrorIds:['DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083']}];
+</script><script src='../js/code.js'></script></body></html>

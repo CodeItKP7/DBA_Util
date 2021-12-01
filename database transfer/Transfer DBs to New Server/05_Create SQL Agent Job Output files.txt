@@ -1,0 +1,9 @@
+
+DDBoost Setup
+Create output directories for SQL Agent Jobs.
+mkdir -p D:\Maintenance_Output
+cd D:\Maintenance_Output
+echo . > D:\Maintenance_Output\EMC_DDBst_DIFF.txt
+echo . > D:\Maintenance_Output\EMC_DDBst_ExpiryDeletion.txt
+echo . > D:\Maintenance_Output\EMC_DDBst_Full.txt
+echo . > D:\Maintenance_Output\EMC_DDBst_TLOG.txt

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>ISEScriptAnalyzerAddOn</id>
+    <version>1.0</version>
+    <authors>Microsoft Corporation</authors>
+    <owners>Microsoft Corporation</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Script Analyzer helps you to analyze the script and Module from within your scripting environment, Windows PowerShell ISE.</description>
+    <releaseNotes />
+    <copyright>(c) 2015 Microsoft Corporation. All rights reserved.</copyright>
+    <tags>PSModule</tags>
+    <dependencies>
+      <dependency id="PSScriptAnalyzer" />
+    </dependencies>
+  </metadata>
+</package>

@@ -1,0 +1,164 @@
+SELECT TOP 100
+    li.basketid,
+    li.lineitemid,
+    li.addressid,
+    li.siteid,
+    c.firstname,
+    c.lastname,
+    c.businessname,
+    addr.streetname,
+    addr.streetnumber,
+    addr.city,
+    addr.[state],
+    addr.postalcode,
+    tosn.timeoptiondesc,
+    li.[programtypeid]
+      ,li.[customerdisplayedinitialprice]
+      ,li.[customerdisplayedrecurringprice]
+      ,li.[utclastchanged]
+      ,li.[utcdatecreated]
+      ,li.[lastchangedby]
+      ,li.[servicecenterid]
+      ,li.[leadtypeid]
+      ,li.[primarytargetid]
+      ,li.[bathroomsnumber]
+      ,li.[firstservicedate]
+      ,li.[timeoptionid]
+      ,li.[customerdisplayedinitialtax]
+      ,li.[customerdisplayedrecurringtax]
+      ,li.[applyeasypay]
+      ,li.[numberofmonthstoservice]
+      ,li.[specificmonthstoservice]
+      ,li.[couponcode]
+      ,li.[discountvaluetype]
+      ,li.[discountvalue]
+      ,li.[priceoverride]
+      ,li.[leadonly]
+      ,li.[branchnumber]
+      ,li.[createdsource]
+      ,li.[sourceid]
+FROM
+    tWebCommerceBasketLineItem li
+    join twebcommercebasket wcb on li.basketid=wcb.basketid
+    left join taccount acc on acc.accountid=wcb.accountid
+    left join tcontact c on c.contactid=acc.primarycontactid
+    left join taddress addr on addr.addressid=li.addressid
+    left join ttimeoptionsetupname tosn on tosn.timeoptionid=li.timeoptionid and tosn.languageid=0
+    WHERE  li.basketid = 9129
+ORDER BY
+    li.basketid DESC
+GO
+
+
+SELECT 
+	ml.MarketingLeadId, ml.ExternalId, ml.CampaignId, ml.FirstName, ml.LastName, ml.IsOwner, ml.Address1,
+	ml.City, ml.State, ml.PostalCode, ml.PrimaryPhone, ml.SecondaryPhone, ml.Email, ml.ServiceLinesCsv, ml.CreatedDate,
+	ml.ServiceGroupId, ml.CaseId, ml.Comments, ml.BranchId, ml.EstimateId, ml.OriginalCaseId, ml.Source, ml.CreatedInBoss, prog.programid,
+	CASE WHEN prog.programid IS NULL THEN NULL ELSE
+		(	Select Sum (SaleValue) as salevalue 
+			from eventvaluehistory 
+			where programid = prog.programid 
+			and HistoryType = 1 
+			and IsEventInOriginalProgramSale = 1 
+			group by programid) 
+	END as salevalue
+FROM	[contact360].[MarketingLead] ml
+		LEFT JOIN [dbo].[tprogram] prog ON ml.CaseId = prog.CaseId
+WHERE	source = 'ECOMM'
+AND		ml.FirstName not like 'test%'
+AND		ml.LastName not like 'test%'
+AND		ml.Email not like '%capgemini%'
+AND		ml.Email not like '%rollins%'
+ORDER BY MarketingLeadId DESC
+
+
+select * from tWebCommerceBasketLineItem where basketid = 9129
+select * from twebcommercebasket where basketid = 9129
+
+
+
+azure
+
+SELECT TOP (100000) [SessionStart] as [SessionStartDate],
+[ReferenceId]
+      ,[FirstName]
+      ,[LastName]
+      ,[PhoneNumber]
+      ,[EmailAddress]
+      ,[EmailOptIn]
+      ,[BillingStreetNumber]
+      ,[BillingStreetName]
+      ,[BillingCity]
+      ,[BillingState]
+      ,[BillingZipCode]
+      ,[BillingFullAddress]
+      ,[ServiceStreetNumber]
+      ,[ServiceStreetName]
+      ,[ServiceCity]
+      ,[ServiceState]
+      ,[ServiceZipCode]
+      ,[ServiceFullAddress]
+      ,[Acreage]
+      ,[AcreageDescription]
+      ,[CallToSchedule]
+      ,[BillingSameAsService]
+      ,[BillingFirstName]
+      ,[BillingLastName]
+      ,[LastStep]
+      ,[AppointmentDate]
+      ,[AppointmentTime]
+      ,[TransactionResponse]
+      ,[TransactionToken]
+      ,[ServiceName]
+      ,[ServiceType]
+      ,[BasePrice]
+      ,[SalesTax]
+      ,[Subtotal]
+      ,[TotalDueToday]
+      ,[IsPropertyOwner]
+      ,[CampaignCode]
+      ,[UserAgent]
+      ,[AcceptTermsAndConditions]
+      ,[Querystring]
+      ,[SessionStart]
+      ,[SessionComplete]
+      ,[PaymentFrequency]
+      ,[SecondaryServiceName]
+      ,[SecondaryServiceType]
+      ,[SecondaryPaymentFrequency]
+      ,[PestName]
+      ,[PromoCode]
+      ,[OriginalPrice]
+      ,[Bathrooms]
+      ,[BasketId]
+      ,[PrimaryServiceFrequency]
+      ,[SecondaryServiceFrequency]
+      ,[ServiceFrequency]
+      ,[GoogleAWClickID]
+      ,[GoogleAdClientID]
+      ,[MarketingContent]
+      ,[MarketingSource]
+      ,[MarketingMedium]
+      ,[CreatedSource]
+  FROM [dbo].[EcommerceTransaction]
+  order by [SessionStart] desc
+
+
+select * from [dbo].[Staging_EcommerceTransaction] order by sessionstart desc
+select * from [dbo].[Staging_tWebCommerceBasket] where basketid = 9129
+
+
+select		et.[BasketId], isnull(wcb.accountid, 0) as [accountid], et.[FirstName], et.[LastName], et.[PhoneNumber], et.[EmailAddress], et.[EmailOptIn], et.[BillingStreetNumber], et.[BillingStreetName], 
+		et.[BillingCity], et.[BillingState], et.[BillingZipCode], et.[BillingFullAddress], et.[ServiceStreetNumber], et.[ServiceStreetName], et.[ServiceCity], et.[ServiceState], 
+		et.[ServiceZipCode], et.[ServiceFullAddress], et.[Acreage], et.[AcreageDescription], et.[CallToSchedule], et.[BillingSameAsService], et.[BillingFirstName], et.[BillingLastName], 
+		et.[LastStep], et.[AppointmentDate], et.[AppointmentTime], et.[TransactionResponse], et.[TransactionToken], et.[ServiceName], et.[ServiceType], et.[BasePrice], et.[SalesTax], 
+		et.[Subtotal], et.[TotalDueToday], et.[IsPropertyOwner], et.[CampaignCode], et.[UserAgent], et.[AcceptTermsAndConditions], et.[SessionStart], et.[SessionComplete], 
+		et.[PaymentFrequency], et.[PestName], et.[PromoCode], et.[OriginalPrice], et.[Bathrooms], isnull(wcb.basketstatus, 'NULL') as [basketstatus],
+		isnull(wcb.processingsummary, 'NULL') as [processingsummary], 
+		wcb.utcdatecreated
+from		[dbo].[Staging_EcommerceTransaction] et
+left join	[dbo].[Staging_tWebCommerceBasket] wcb
+on		et.basketid = wcb.basketid
+order by   et.[SessionStart] desc
+
+ 

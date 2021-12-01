@@ -1,0 +1,146 @@
+<html>
+<head>
+<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge' />
+<link rel=stylesheet data-name='vs/editor/editor.main' href='../monaco/editor.main.css' type='text/css'>
+<link rel='stylesheet' type='text/css' href='../css/style.css'></link>
+<script type='text/javascript' src='../js/functions.js'></script>
+<script async='async' type='text/javascript' src='../monaco/sql.js'></script>
+<script src='../monaco/loader.js'></script>
+<script src='../monaco/editor.main.nls.js'></script>
+<script src='../monaco/editor.main.js'></script>
+</head>
+<body class='sql-body' id='scrollable-body'>
+<div id='left-side' class='left-side'><div class='panel'>
+<span class='panel-title source'>&nbsp;Source</span>
+<img tabindex='0' aria-label='Previous problem' role='button' class='nav-button nav-button-disabled' id='source_previous_problem' src='../img/previous_problem.gif' onclick='handleProblemButtonClick(-1, true)' title='Previous problem' />
+<img tabindex='0' aria-label='Next problem' role='button' class='nav-button nav-button-disabled' id='source_next_problem' src='../img/next_problem.gif' onclick='handleProblemButtonClick(1, true)' title='Next problem' />
+<img tabindex='0' aria-label='Previous bookmark' role='button' class='nav-button nav-button-disabled' id='source_previous_bookmark' src='../img/previous_bookmark.gif' onclick='handleBookmarkButtonClick(-1, true)' title='Previous bookmark' />
+<img tabindex='0' aria-label='Next bookmark' role='button' class='nav-button nav-button-disabled' id='source_next_bookmark' src='../img/next_bookmark.gif' onclick='handleBookmarkButtonClick(1, true)' title='Next bookmark' />
+<img tabindex='0' aria-label='Clear bookmarks' role='button' class='nav-button nav-button-disabled' id='source_clear_bookmarks' src='../img/clear_bookmarks.gif' onclick='handleBookmarkButtonClick(0, true)' title='Clear bookmarks' />
+<a class='raw-source-link' target='_blank' aria-label='Raw source' href='./src.sql.txt');'>Raw source</a>
+</div>
+<div class='editor-container'>
+<div id='monaco-left-side'></div><pre id='monaco-left-side-sql'>
+CREATE 
+	VIEW LDATATST.DFTCDXRF_VIEW (DF_ID, DF_CREATED_TIMESTAMP, DF_CREATED_BY, DF_UPDATED_TIMESTAMP, DF_UPDATED_BY, DF_STATUS, DF_TYPE, DF_CTS_CODE, DF_CODE_TYPE, DF_HUD_DFT_RSN, DF_FNMA_DFT_RSN, DF_FHLMC_DFT_RSN, DF_GRH_DFT_RSN, DF_VA_DFT_RSN, DF_PMI_DFT_RSN, DF_RSN_DESC, DF_TARGET_FLAG, DF_CLEAR_FLAG, DF_TARGET_DATE, DF_CLEAR_DATE, DF_PRIORITY, DF_SUB_PRIORITY, DF_ONE_TIME_REPORT)
+		AS 
+			SELECT 
+				ID, 
+				CREATEDTS, 
+				CREATEDBY, 
+				UPDATEDTS, 
+				UPDATEDBY, 
+				STATUS, 
+				PROCESS, 
+				DFCDTYP, 
+				DFHUDRSN, 
+				DFFNMRSN, 
+				DFFHLRSN, 
+				DFGRHRSN, 
+				DFVAFRSN, 
+				DFPMIRSN, 
+				DFRSNDSC, 
+				DFTGTFLG, 
+				DFTGTFLG, 
+				DFCLRFLG, 
+				DFTGTDT, 
+				DFCLRDT, 
+				DFPRIOR, 
+				DFSUBPR, 
+				DFONER
+			FROM LDATATST.DFTCDXRF;</pre></div></div><div id='resize-bar' class='resize-bar'></div><div id='right-side' class='right-side'><div class='panel'>
+<span class='panel-title target'>&nbsp;Target</span>
+<img tabindex='0' aria-label='Previous problem' role='button' class='nav-button nav-button-disabled' id='target_previous_problem' src='../img/previous_problem.gif' onclick='handleProblemButtonClick(-1, false)' title='Previous problem' />
+<img tabindex='0' aria-label='Next problem' role='button' class='nav-button nav-button-disabled' id='target_next_problem' src='../img/next_problem.gif' onclick='handleProblemButtonClick(1, false)' title='Next problem' />
+<img tabindex='0' aria-label='Previous bookmark' role='button' class='nav-button nav-button-disabled' id='target_previous_bookmark' src='../img/previous_bookmark.gif' onclick='handleBookmarkButtonClick(-1, false)' title='Previous bookmark' />
+<img tabindex='0' aria-label='Next bookmark' role='button' class='nav-button nav-button-disabled' id='target_next_bookmark' src='../img/next_bookmark.gif' onclick='handleBookmarkButtonClick(1, false)' title='Next bookmark' />
+<img tabindex='0' aria-label='Clear bookmarks' role='button' class='nav-button nav-button-disabled' id='target_clear_bookmarks' src='../img/clear_bookmarks.gif' onclick='handleBookmarkButtonClick(0, false)' title='Clear bookmarks' />
+</div>
+<div class='editor-container'>
+<div id='monaco-right-side'></div><pre id='monaco-right-side-sql'>
+/* 
+*   SSMA error messages:
+*   DB22SS0083: Identifier ID cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier CREATEDTS cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier CREATEDBY cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier UPDATEDTS cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier UPDATEDBY cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier STATUS cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier PROCESS cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier DFCDTYP cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier DFHUDRSN cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier DFFNMRSN cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier DFFHLRSN cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier DFGRHRSN cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier DFVAFRSN cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier DFPMIRSN cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier DFRSNDSC cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier DFTGTFLG cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier DFTGTFLG cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier DFCLRFLG cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier DFTGTDT cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier DFCLRDT cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier DFPRIOR cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier DFSUBPR cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier DFONER cannot be converted because it was not resolved.
+
+CREATE VIEW LDATATST.DFTCDXRF_VIEW (
+	DF_ID, 
+	DF_CREATED_TIMESTAMP, 
+	DF_CREATED_BY, 
+	DF_UPDATED_TIMESTAMP, 
+	DF_UPDATED_BY, 
+	DF_STATUS, 
+	DF_TYPE, 
+	DF_CTS_CODE, 
+	DF_CODE_TYPE, 
+	DF_HUD_DFT_RSN, 
+	DF_FNMA_DFT_RSN, 
+	DF_FHLMC_DFT_RSN, 
+	DF_GRH_DFT_RSN, 
+	DF_VA_DFT_RSN, 
+	DF_PMI_DFT_RSN, 
+	DF_RSN_DESC, 
+	DF_TARGET_FLAG, 
+	DF_CLEAR_FLAG, 
+	DF_TARGET_DATE, 
+	DF_CLEAR_DATE, 
+	DF_PRIORITY, 
+	DF_SUB_PRIORITY, 
+	DF_ONE_TIME_REPORT)
+AS 
+	SELECT 
+		ID, 
+		CREATEDTS, 
+		CREATEDBY, 
+		UPDATEDTS, 
+		UPDATEDBY, 
+		STATUS, 
+		PROCESS, 
+		DFCDTYP, 
+		DFHUDRSN, 
+		DFFNMRSN, 
+		DFFHLRSN, 
+		DFGRHRSN, 
+		DFVAFRSN, 
+		DFPMIRSN, 
+		DFRSNDSC, 
+		DFTGTFLG, 
+		DFTGTFLG, 
+		DFCLRFLG, 
+		DFTGTDT, 
+		DFCLRDT, 
+		DFPRIOR, 
+		DFSUBPR, 
+		DFONER
+	FROM LDATATST.DFTCDXRF
+GO
+*/
+
+</pre></div></div><script>
+var sourceLanguage = 'sql';
+var sourceEditorSelections = [{start:395, end:763, guid:'9b1854c5-6d70-4770-a2c5-33a48973ddf3', reflection:['8b27180c-bb4b-44eb-b40c-ef10f2dbfe83'], convmessInfoIds:[], convmessWarningIds:[], convmessErrorIds:[]},{start:0, end:764, guid:'2f9cd12a-a439-4470-aac9-b90a97a95420', reflection:['733a56b3-97f4-4e2c-879a-46b36d74ad55'], convmessInfoIds:[], convmessWarningIds:[], convmessErrorIds:[]}];
+var targetLanguage = 'sql';
+var targetEditorSelections = [{start:2410, end:2728, guid:'8b27180c-bb4b-44eb-b40c-ef10f2dbfe83', reflection:['9b1854c5-6d70-4770-a2c5-33a48973ddf3'], convmessInfoIds:[], convmessWarningIds:[], convmessErrorIds:[]},{start:1973, end:2728, guid:'733a56b3-97f4-4e2c-879a-46b36d74ad55', reflection:['2f9cd12a-a439-4470-aac9-b90a97a95420'], convmessInfoIds:[], convmessWarningIds:[], convmessErrorIds:[]},{start:0, end:2736, guid:'03fff5d5-dba0-42b8-8ede-675246f67fa8', reflection:[], convmessInfoIds:[], convmessWarningIds:[], convmessErrorIds:['DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083']}];
+</script><script src='../js/code.js'></script></body></html>

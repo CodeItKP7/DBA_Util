@@ -1,0 +1,15 @@
+For future reference this task should be documented and included in all db restores to new servers.
+Transfer logins and passwords between instances of SQL Server
+1. Execute script Create_procs_to_transfer_logins_to_new_server.sql on source/original server.
+2. Execute the newly created proc and save the output to text.
+A. EXEC sp_help_revlogin
+3. Restore databases on new server.
+4. Execute the script previously created to add the logins on the new server.
+5. Relink the logins to the databases using proc sp_change_users_login.
+A.
+USE <__DATABASE NAME__>
+GO
+EXEC sp_change_users_login 'Report'  --Returns list of orphaned db users
+GO
+EXEC sp_change_users_login 'Auto_Fix', '<__LOGIN NAME__>'
+GO

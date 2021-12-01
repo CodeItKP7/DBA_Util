@@ -1,0 +1,370 @@
+<html>
+<head>
+<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge' />
+<link rel=stylesheet data-name='vs/editor/editor.main' href='../monaco/editor.main.css' type='text/css'>
+<link rel='stylesheet' type='text/css' href='../css/style.css'></link>
+<script type='text/javascript' src='../js/functions.js'></script>
+<script async='async' type='text/javascript' src='../monaco/sql.js'></script>
+<script src='../monaco/loader.js'></script>
+<script src='../monaco/editor.main.nls.js'></script>
+<script src='../monaco/editor.main.js'></script>
+</head>
+<body class='sql-body' id='scrollable-body'>
+<div id='left-side' class='left-side'><div class='panel'>
+<span class='panel-title source'>&nbsp;Source</span>
+<img tabindex='0' aria-label='Previous problem' role='button' class='nav-button nav-button-disabled' id='source_previous_problem' src='../img/previous_problem.gif' onclick='handleProblemButtonClick(-1, true)' title='Previous problem' />
+<img tabindex='0' aria-label='Next problem' role='button' class='nav-button nav-button-disabled' id='source_next_problem' src='../img/next_problem.gif' onclick='handleProblemButtonClick(1, true)' title='Next problem' />
+<img tabindex='0' aria-label='Previous bookmark' role='button' class='nav-button nav-button-disabled' id='source_previous_bookmark' src='../img/previous_bookmark.gif' onclick='handleBookmarkButtonClick(-1, true)' title='Previous bookmark' />
+<img tabindex='0' aria-label='Next bookmark' role='button' class='nav-button nav-button-disabled' id='source_next_bookmark' src='../img/next_bookmark.gif' onclick='handleBookmarkButtonClick(1, true)' title='Next bookmark' />
+<img tabindex='0' aria-label='Clear bookmarks' role='button' class='nav-button nav-button-disabled' id='source_clear_bookmarks' src='../img/clear_bookmarks.gif' onclick='handleBookmarkButtonClick(0, true)' title='Clear bookmarks' />
+<a class='raw-source-link' target='_blank' aria-label='Raw source' href='./src.sql.txt');'>Raw source</a>
+</div>
+<div class='editor-container'>
+<div id='monaco-left-side'></div><pre id='monaco-left-side-sql'>
+CREATE 
+	VIEW LDATATST.SERVMAST_VIEW (SV_PK_ID, SV_CREATED_TIMESTAMP, SV_CREATED_BY, SV_UPDATED_TIMESTAMP, SV_UPDATED_BY, SV_STATUS, SV_TYPE, SV_SERVICER_NBR, SV_SERVICER_NAME, SV_ALTERNATE_NAME, SV_SERVICER_ADDR1, SV_SERVICER_ADDR2, SV_SERVICER_CITY, SV_SERVICER_STATE, SV_SERVICER_ZIP, SV_SERVICER_COUNTRY, SV_PHONE_COUNTRY_CODE, SV_PHONE_CITY_CODE, SV_SERVICER_PHONE_NBR, SV_FAX_COUNTRY_CODE, SV_FAX_CITY_CODE, SV_SERVICER_FAX_NBR, SV_CONTACT_NAME, SV_CONTACT_PHONE_NBR, SV_CONTACT_EXTENSION, SV_CONTACT_EMAIL, SV_EFFECTIVE_DATE, SV_TAX_ID, SV_HUD_NBR, SV_VA_NBR, SV_SELLER_SRV_NBR01, SV_SELLER_SRV_NBR02, SV_SELLER_SRV_NBR03, SV_SELLER_SRV_NBR04, SV_SELLER_SRV_NBR05, SV_SELLER_SRV_NBR06, SV_SELLER_SRV_NBR07, SV_SELLER_SRV_NBR08, SV_SELLER_SRV_NBR09, SV_SELLER_SRV_NBR10, SV_SELLER_TYP_NBR01, SV_SELLER_TYP_NBR02, SV_SELLER_TYP_NBR03, SV_SELLER_TYP_NBR04, SV_SELLER_TYP_NBR05, SV_SELLER_TYP_NBR06, SV_SELLER_TYP_NBR07, SV_SELLER_TYP_NBR08, SV_SELLER_TYP_NBR09, SV_SELLER_TYP_NBR10, SV_TAX_CD_LENDER_A, SV_TAX_CD_LENDER_B, SV_TAX_CD_LENDER_C, SV_TAX_CD_LENDER_D, SV_TAX_CD_LENDER_E, SV_TAX_CD_LENDER_F, SV_TAX_CD_LENDER_G, SV_TAX_CD_LENDER_H, SV_TAX_CD_LENDER_I, SV_TAX_CD_LENDER_J, SV_TAX_CD_LENDER_K, SV_TAX_CD_LENDER_L, SV_TAX_CD_LENDER_M, SV_TAX_CD_LENDER_N, SV_TAX_CD_LENDER_O, SV_TAX_CD_LENDER_P, SV_TAX_CD_LENDER_Q, SV_TAX_CD_LENDER_R, SV_TAX_CD_LENDER_S, SV_TAX_CD_LENDER_T, SV_TAX_CD_LENDER_U, SV_TAX_CD_LENDER_V, SV_TAX_CD_LENDER_W, SV_TAX_CD_LENDER_X, SV_TAX_CD_LENDER_Y, SV_TAX_CD_LENDER_Z, SV_ORG_ID_NBR, SV_SERV_TYPE, SV_WEBSITE_ADDRESS)
+		AS 
+			SELECT 
+				ID, 
+				CREATEDTS, 
+				CREATEDBY, 
+				UPDATEDTS, 
+				UPDATEDBY, 
+				STATUS, 
+				TYPE, 
+				SVSRV#, 
+				SVNAME, 
+				SVANAM, 
+				SVADD1, 
+				SVADD2, 
+				SVCITY, 
+				SVSTAT, 
+				SVZIP, 
+				SVCTRY, 
+				SVPCTR, 
+				SVPCIT, 
+				SVPHN#, 
+				SVFCTR, 
+				SVFCIT, 
+				SVFAX#, 
+				SVCONT, 
+				SVCNT#, 
+				SVCEXT, 
+				SVCEML, 
+				SVEFDT, 
+				SVTXID, 
+				SVHUD#, 
+				SVVA#, 
+				SVSS01, 
+				SVSS02, 
+				SVSS03, 
+				SVSS04, 
+				SVSS05, 
+				SVSS06, 
+				SVSS07, 
+				SVSS08, 
+				SVSS09, 
+				SVSS10, 
+				SVST01, 
+				SVST02, 
+				SVST03, 
+				SVST04, 
+				SVST05, 
+				SVST06, 
+				SVST07, 
+				SVST08, 
+				SVST09, 
+				SVST10, 
+				SVTCLA, 
+				SVTCLB, 
+				SVTCLC, 
+				SVTCLD, 
+				SVTCLE, 
+				SVTCLF, 
+				SVTCLG, 
+				SVTCLH, 
+				SVTCLI, 
+				SVTCLJ, 
+				SVTCLK, 
+				SVTCLL, 
+				SVTCLM, 
+				SVTCLN, 
+				SVTCLO, 
+				SVTCLP, 
+				SVTCLQ, 
+				SVTCLR, 
+				SVTCLS, 
+				SVTCLT, 
+				SVTCLU, 
+				SVTCLV, 
+				SVTCLW, 
+				SVTCLX, 
+				SVTCLY, 
+				SVTCLZ, 
+				SVORG#, 
+				SVTYPE, 
+				SVWEBA
+			FROM LDATATST.SERVMAST;</pre></div></div><div id='resize-bar' class='resize-bar'></div><div id='right-side' class='right-side'><div class='panel'>
+<span class='panel-title target'>&nbsp;Target</span>
+<img tabindex='0' aria-label='Previous problem' role='button' class='nav-button nav-button-disabled' id='target_previous_problem' src='../img/previous_problem.gif' onclick='handleProblemButtonClick(-1, false)' title='Previous problem' />
+<img tabindex='0' aria-label='Next problem' role='button' class='nav-button nav-button-disabled' id='target_next_problem' src='../img/next_problem.gif' onclick='handleProblemButtonClick(1, false)' title='Next problem' />
+<img tabindex='0' aria-label='Previous bookmark' role='button' class='nav-button nav-button-disabled' id='target_previous_bookmark' src='../img/previous_bookmark.gif' onclick='handleBookmarkButtonClick(-1, false)' title='Previous bookmark' />
+<img tabindex='0' aria-label='Next bookmark' role='button' class='nav-button nav-button-disabled' id='target_next_bookmark' src='../img/next_bookmark.gif' onclick='handleBookmarkButtonClick(1, false)' title='Next bookmark' />
+<img tabindex='0' aria-label='Clear bookmarks' role='button' class='nav-button nav-button-disabled' id='target_clear_bookmarks' src='../img/clear_bookmarks.gif' onclick='handleBookmarkButtonClick(0, false)' title='Clear bookmarks' />
+</div>
+<div class='editor-container'>
+<div id='monaco-right-side'></div><pre id='monaco-right-side-sql'>
+/* 
+*   SSMA error messages:
+*   DB22SS0083: Identifier ID cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier CREATEDTS cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier CREATEDBY cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier UPDATEDTS cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier UPDATEDBY cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier STATUS cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier "TYPE" cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier SVSRV# cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier SVNAME cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier SVANAM cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier SVADD1 cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier SVADD2 cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier SVCITY cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier SVSTAT cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier SVZIP cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier SVCTRY cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier SVPCTR cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier SVPCIT cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier SVPHN# cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier SVFCTR cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier SVFCIT cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier SVFAX# cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier SVCONT cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier SVCNT# cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier SVCEXT cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier SVCEML cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier SVEFDT cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier SVTXID cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier SVHUD# cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier SVVA# cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier SVSS01 cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier SVSS02 cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier SVSS03 cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier SVSS04 cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier SVSS05 cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier SVSS06 cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier SVSS07 cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier SVSS08 cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier SVSS09 cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier SVSS10 cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier SVST01 cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier SVST02 cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier SVST03 cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier SVST04 cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier SVST05 cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier SVST06 cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier SVST07 cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier SVST08 cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier SVST09 cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier SVST10 cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier SVTCLA cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier SVTCLB cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier SVTCLC cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier SVTCLD cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier SVTCLE cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier SVTCLF cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier SVTCLG cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier SVTCLH cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier SVTCLI cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier SVTCLJ cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier SVTCLK cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier SVTCLL cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier SVTCLM cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier SVTCLN cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier SVTCLO cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier SVTCLP cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier SVTCLQ cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier SVTCLR cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier SVTCLS cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier SVTCLT cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier SVTCLU cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier SVTCLV cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier SVTCLW cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier SVTCLX cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier SVTCLY cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier SVTCLZ cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier SVORG# cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier SVTYPE cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier SVWEBA cannot be converted because it was not resolved.
+
+CREATE VIEW LDATATST.SERVMAST_VIEW (
+	SV_PK_ID, 
+	SV_CREATED_TIMESTAMP, 
+	SV_CREATED_BY, 
+	SV_UPDATED_TIMESTAMP, 
+	SV_UPDATED_BY, 
+	SV_STATUS, 
+	SV_TYPE, 
+	SV_SERVICER_NBR, 
+	SV_SERVICER_NAME, 
+	SV_ALTERNATE_NAME, 
+	SV_SERVICER_ADDR1, 
+	SV_SERVICER_ADDR2, 
+	SV_SERVICER_CITY, 
+	SV_SERVICER_STATE, 
+	SV_SERVICER_ZIP, 
+	SV_SERVICER_COUNTRY, 
+	SV_PHONE_COUNTRY_CODE, 
+	SV_PHONE_CITY_CODE, 
+	SV_SERVICER_PHONE_NBR, 
+	SV_FAX_COUNTRY_CODE, 
+	SV_FAX_CITY_CODE, 
+	SV_SERVICER_FAX_NBR, 
+	SV_CONTACT_NAME, 
+	SV_CONTACT_PHONE_NBR, 
+	SV_CONTACT_EXTENSION, 
+	SV_CONTACT_EMAIL, 
+	SV_EFFECTIVE_DATE, 
+	SV_TAX_ID, 
+	SV_HUD_NBR, 
+	SV_VA_NBR, 
+	SV_SELLER_SRV_NBR01, 
+	SV_SELLER_SRV_NBR02, 
+	SV_SELLER_SRV_NBR03, 
+	SV_SELLER_SRV_NBR04, 
+	SV_SELLER_SRV_NBR05, 
+	SV_SELLER_SRV_NBR06, 
+	SV_SELLER_SRV_NBR07, 
+	SV_SELLER_SRV_NBR08, 
+	SV_SELLER_SRV_NBR09, 
+	SV_SELLER_SRV_NBR10, 
+	SV_SELLER_TYP_NBR01, 
+	SV_SELLER_TYP_NBR02, 
+	SV_SELLER_TYP_NBR03, 
+	SV_SELLER_TYP_NBR04, 
+	SV_SELLER_TYP_NBR05, 
+	SV_SELLER_TYP_NBR06, 
+	SV_SELLER_TYP_NBR07, 
+	SV_SELLER_TYP_NBR08, 
+	SV_SELLER_TYP_NBR09, 
+	SV_SELLER_TYP_NBR10, 
+	SV_TAX_CD_LENDER_A, 
+	SV_TAX_CD_LENDER_B, 
+	SV_TAX_CD_LENDER_C, 
+	SV_TAX_CD_LENDER_D, 
+	SV_TAX_CD_LENDER_E, 
+	SV_TAX_CD_LENDER_F, 
+	SV_TAX_CD_LENDER_G, 
+	SV_TAX_CD_LENDER_H, 
+	SV_TAX_CD_LENDER_I, 
+	SV_TAX_CD_LENDER_J, 
+	SV_TAX_CD_LENDER_K, 
+	SV_TAX_CD_LENDER_L, 
+	SV_TAX_CD_LENDER_M, 
+	SV_TAX_CD_LENDER_N, 
+	SV_TAX_CD_LENDER_O, 
+	SV_TAX_CD_LENDER_P, 
+	SV_TAX_CD_LENDER_Q, 
+	SV_TAX_CD_LENDER_R, 
+	SV_TAX_CD_LENDER_S, 
+	SV_TAX_CD_LENDER_T, 
+	SV_TAX_CD_LENDER_U, 
+	SV_TAX_CD_LENDER_V, 
+	SV_TAX_CD_LENDER_W, 
+	SV_TAX_CD_LENDER_X, 
+	SV_TAX_CD_LENDER_Y, 
+	SV_TAX_CD_LENDER_Z, 
+	SV_ORG_ID_NBR, 
+	SV_SERV_TYPE, 
+	SV_WEBSITE_ADDRESS)
+AS 
+	SELECT 
+		ID, 
+		CREATEDTS, 
+		CREATEDBY, 
+		UPDATEDTS, 
+		UPDATEDBY, 
+		STATUS, 
+		TYPE, 
+		SVSRV#, 
+		SVNAME, 
+		SVANAM, 
+		SVADD1, 
+		SVADD2, 
+		SVCITY, 
+		SVSTAT, 
+		SVZIP, 
+		SVCTRY, 
+		SVPCTR, 
+		SVPCIT, 
+		SVPHN#, 
+		SVFCTR, 
+		SVFCIT, 
+		SVFAX#, 
+		SVCONT, 
+		SVCNT#, 
+		SVCEXT, 
+		SVCEML, 
+		SVEFDT, 
+		SVTXID, 
+		SVHUD#, 
+		SVVA#, 
+		SVSS01, 
+		SVSS02, 
+		SVSS03, 
+		SVSS04, 
+		SVSS05, 
+		SVSS06, 
+		SVSS07, 
+		SVSS08, 
+		SVSS09, 
+		SVSS10, 
+		SVST01, 
+		SVST02, 
+		SVST03, 
+		SVST04, 
+		SVST05, 
+		SVST06, 
+		SVST07, 
+		SVST08, 
+		SVST09, 
+		SVST10, 
+		SVTCLA, 
+		SVTCLB, 
+		SVTCLC, 
+		SVTCLD, 
+		SVTCLE, 
+		SVTCLF, 
+		SVTCLG, 
+		SVTCLH, 
+		SVTCLI, 
+		SVTCLJ, 
+		SVTCLK, 
+		SVTCLL, 
+		SVTCLM, 
+		SVTCLN, 
+		SVTCLO, 
+		SVTCLP, 
+		SVTCLQ, 
+		SVTCLR, 
+		SVTCLS, 
+		SVTCLT, 
+		SVTCLU, 
+		SVTCLV, 
+		SVTCLW, 
+		SVTCLX, 
+		SVTCLY, 
+		SVTCLZ, 
+		SVORG#, 
+		SVTYPE, 
+		SVWEBA
+	FROM LDATATST.SERVMAST
+GO
+*/
+
+</pre></div></div><script>
+var sourceLanguage = 'sql';
+var sourceEditorSelections = [{start:1562, end:2628, guid:'4cf55369-5f3c-4334-9382-009f942a7bff', reflection:['6b15aa23-93a8-4056-9dae-dd73a841d42c'], convmessInfoIds:[], convmessWarningIds:[], convmessErrorIds:[]},{start:0, end:2629, guid:'f6fa9ec9-62a8-47e8-9732-7488daec2b21', reflection:['49f0d539-5967-42e2-9b6d-3133dc99dadd'], convmessInfoIds:[], convmessWarningIds:[], convmessErrorIds:[]}];
+var targetLanguage = 'sql';
+var targetEditorSelections = [{start:8309, end:9213, guid:'6b15aa23-93a8-4056-9dae-dd73a841d42c', reflection:['4cf55369-5f3c-4334-9382-009f942a7bff'], convmessInfoIds:[], convmessWarningIds:[], convmessErrorIds:[]},{start:6593, end:9213, guid:'49f0d539-5967-42e2-9b6d-3133dc99dadd', reflection:['f6fa9ec9-62a8-47e8-9732-7488daec2b21'], convmessInfoIds:[], convmessWarningIds:[], convmessErrorIds:[]},{start:0, end:9221, guid:'7dc67589-678f-465d-a286-24e393c72a38', reflection:[], convmessInfoIds:[], convmessWarningIds:[], convmessErrorIds:['DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083']}];
+</script><script src='../js/code.js'></script></body></html>

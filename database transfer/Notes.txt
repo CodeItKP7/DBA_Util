@@ -1,0 +1,157 @@
+Searching for "streeter"...
+
+0 occurrence(s) found.
+new servers in Incidents INC0646778 (OWSSDREDO202) and INC0646903 (OWSSRSDBO205) 
+the replacement of 
+
+Source ServerName	Target ServerName	Current MSSSQL Version
+OWSSDREDO201	     OWSSDREDO202		2017 Developer  sa	86s+w^*mGuZb
+OWSSRSDBO204		 OWSSRSDBO205		2017 Developer  sa	86s+w^*mGuZb 
+devservsuiteSVC xGrks22lcQ
+ROLLINS\dbservicedev Db@sR5ecure
+
+OWSSDDBO236 - Replacement for OWSSDDBO214
+Install MS SQL Server 2017 Developer Edition on Servers OWSSDDBO236 & OWSSDDBO237
+
+Create folders on SQLMounts
+
+mkdir -p c:\SQLMounts\Data1\MSSQL14.MSSQLSERVER\MSSQL\DATA
+mkdir -p c:\SQLMounts\Logs2\MSSQL14.MSSQLSERVER\MSSQL\Logs
+mkdir -p c:\SQLMounts\TempDB\SQLTempData1
+mkdir -p c:\SQLMounts\Logs2\MSSQL14.MSSQLSERVER\MSSQL\Logs
+mkdir -p c:\SQLMounts\SQLBackups\MSSQL14.MSSQLSERVER\MSSQL
+mkdir -p C:\SQLMounts\SQLBackups\SQLBackups1
+
+
+mkdir -p c:\SQLMounts\Data2\SQLData1\RollinsBackgroundJobs
+mkdir -p c:\SQLMounts\Data1\SQLData1\ServSuiteData
+mkdir -p c:\SQLMounts\Data1\SQLData1\ServSuiteDocument
+mkdir -p c:\SQLMounts\Data2\SQLData1\ServSuiteMobile
+mkdir -p c:\SQLMounts\Data2\SQLData1\ServSuiteLog
+mkdir -p c:\SQLMounts\Data2\SQLData1\ServSuiteReplicaEdits
+mkdir -p c:\SQLMounts\Data2\SQLData1\ServSuiteWBProgram
+mkdir -p c:\SQLMounts\Data2\SQLData1\ServSuiteWBReport
+mkdir -p c:\SQLMounts\Data2\SQLData1\ServSuiteWBUser
+
+mkdir -p c:\SQLMounts\Logs2\SQLLogs1\RollinsBackgroundJobs
+mkdir -p c:\SQLMounts\Logs1\SQLLogs1\ServSuiteData
+mkdir -p c:\SQLMounts\Logs1\SQLLogs1\ServSuiteDocument
+mkdir -p c:\SQLMounts\Logs2\SQLLogs1\ServSuiteMobile
+mkdir -p c:\SQLMounts\Logs2\SQLLogs1\ServSuiteLog
+mkdir -p c:\SQLMounts\Logs2\SQLLogs1\ServSuiteReplicaEdits
+mkdir -p c:\SQLMounts\Logs2\SQLLogs1\ServSuiteWBProgram
+mkdir -p c:\SQLMounts\Logs2\SQLLogs1\ServSuiteWBReport
+mkdir -p c:\SQLMounts\Logs2\SQLLogs1\ServSuiteWBUser
+
+mkdir -p c:\SQLMounts\Data2\SQLData1\PublicAPI
+mkdir -p c:\SQLMounts\Logs2\SQLLogs1\PublicAPI
+
+DDBoost Setup
+Create output directories for SQL Agent Jobs.
+mkdir -p D:\Maintenance_Output
+cd D:\Maintenance_Output
+echo . > D:\Maintenance_Output\EMC_DDBst_DIFF.txt
+echo . > D:\Maintenance_Output\EMC_DDBst_ExpiryDeletion.txt
+echo . > D:\Maintenance_Output\EMC_DDBst_Full.txt
+echo . > D:\Maintenance_Output\EMC_DDBst_TLOG.txt
+
+\\rwsqlmgmth202\DBSERVICE\Applications\DDBoost\msappagent193_win_x64_Latest\emcmsappagent-19.3.0.0.exe
+
+C:\Program Files\DPSAPPS\MSAPPAGENT\bin\ddbmaSQLCLRDeployApp.exe
+
+Backup databases on OWSSDDBO213 and restore to OWSSDDBO234.
+
+Backup databases on OWSSDDBO224 and restore to OWSSDDBO235.
+Create Always On Group OWSSDDBAGO201 and add databases.
+
+C:\SQLMounts\Data1\MSSQL14.MSSQLSERVER\MSSQL
+
+OWSSDDBO213
+OWSSDDBO224
+
+
+sqldevddboost  r0llins
+
+Data Domains
+Prod - dd-di-rsc-01.rollins.com
+Dev -  dd-di-occc-01.rollins.local occcsqldev
+
+The databases from MSSQL 2008 db server RWCLSQL8R2CLH have been copied to an 2017 server, OWSQL17O201.  OWDSQL8R2H201
+
+
+ALTER DATABASE master MODIFY FILE ( NAME = master , FILENAME = 'S:\SQLData1\Sys_SQLData\MSSQL14.MSSQLSERVER\MSSQL\DATA\master.mdf' ) ;
+ALTER DATABASE master MODIFY FILE ( NAME = mastlog , FILENAME = 'S:\SQLData1\Sys_SQLData\MSSQL14.MSSQLSERVER\MSSQL\DATA\mastlog.ldf' ) ;
+ALTER DATABASE tempdb MODIFY FILE ( NAME = tempdev , FILENAME = 'T:\SQLTempDB\tempdb.mdf' ) ;
+ALTER DATABASE tempdb MODIFY FILE ( NAME = templog , FILENAME = 'T:\SQLTempDB\templog.ldf' ) ;
+ALTER DATABASE tempdb MODIFY FILE ( NAME = temp2 , FILENAME = 'T:\SQLTempDB\tempdb_mssql_2.ndf' ) ;
+ALTER DATABASE tempdb MODIFY FILE ( NAME = temp3 , FILENAME = 'T:\SQLTempDB\tempdb_mssql_3.ndf' ) ;
+ALTER DATABASE tempdb MODIFY FILE ( NAME = temp4 , FILENAME = 'T:\SQLTempDB\tempdb_mssql_4.ndf' ) ;
+ALTER DATABASE tempdb MODIFY FILE ( NAME = temp5 , FILENAME = 'T:\SQLTempDB\tempdb_mssql_5.ndf' ) ;
+ALTER DATABASE tempdb MODIFY FILE ( NAME = temp6 , FILENAME = 'T:\SQLTempDB\tempdb_mssql_6.ndf' ) ;
+ALTER DATABASE tempdb MODIFY FILE ( NAME = temp7 , FILENAME = 'T:\SQLTempDB\tempdb_mssql_7.ndf' ) ;
+ALTER DATABASE tempdb MODIFY FILE ( NAME = temp8 , FILENAME = 'T:\SQLTempDB\tempdb_mssql_8.ndf' ) ;
+ALTER DATABASE model MODIFY FILE ( NAME = modeldev , FILENAME = 'S:\SQLData1\Sys_SQLData\MSSQL14.MSSQLSERVER\MSSQL\DATA\model.mdf' ) ;
+ALTER DATABASE model MODIFY FILE ( NAME = modellog , FILENAME = 'S:\SQLData1\Sys_SQLData\MSSQL14.MSSQLSERVER\MSSQL\DATA\modellog.ldf' ) ;
+ALTER DATABASE msdb MODIFY FILE ( NAME = MSDBData , FILENAME = 'S:\SQLData1\Sys_SQLData\MSSQL14.MSSQLSERVER\MSSQL\DATA\MSDBData.mdf' ) ;
+ALTER DATABASE msdb MODIFY FILE ( NAME = MSDBLog , FILENAME = 'S:\SQLData1\Sys_SQLData\MSSQL14.MSSQLSERVER\MSSQL\DATA\MSDBLog.ldf' ) ;
+
+mkdir -p S:\SQLData1\Sys_SQLData\MSSQL14.MSSQLSERVER\MSSQL\DATA\
+mkdir -p T:\SQLTempDB\
+
+
+
+
+
+ALTER DATABASE tempdb MODIFY FILE ( NAME = tempdev , FILENAME = 'C:\SQLMounts\TempDB\SQLData1\tempdb.mdf' ) ;
+ALTER DATABASE tempdb MODIFY FILE ( NAME = templog , FILENAME = 'C:\SQLMounts\TempDB\SQLLogs1\templog.ldf' ) ;
+ALTER DATABASE tempdb MODIFY FILE ( NAME = temp2 , FILENAME = 'C:\SQLMounts\TempDB\SQLData1\tempdb_mssql_2.ndf' ) ;
+ALTER DATABASE tempdb MODIFY FILE ( NAME = temp3 , FILENAME = 'C:\SQLMounts\TempDB\SQLData1\tempdb_mssql_3.ndf' ) ;
+ALTER DATABASE tempdb MODIFY FILE ( NAME = temp4 , FILENAME = 'C:\SQLMounts\TempDB\SQLData1\tempdb_mssql_4.ndf' ) ;
+ALTER DATABASE tempdb MODIFY FILE ( NAME = temp5 , FILENAME = 'C:\SQLMounts\TempDB\SQLData1\tempdb_mssql_5.ndf' ) ;
+ALTER DATABASE tempdb MODIFY FILE ( NAME = temp6 , FILENAME = 'C:\SQLMounts\TempDB\SQLData1\tempdb_mssql_6.ndf' ) ;
+ALTER DATABASE tempdb MODIFY FILE ( NAME = temp7 , FILENAME = 'C:\SQLMounts\TempDB\SQLData1\tempdb_mssql_7.ndf' ) ;
+ALTER DATABASE tempdb MODIFY FILE ( NAME = temp8 , FILENAME = 'C:\SQLMounts\TempDB\SQLData1\tempdb_mssql_8.ndf' ) ;
+
+
+OWSSDREDO202
+
+master
+
+S:\SQLData1\Sys_SQLData\MSSQL12.MSSQLSERVER\MSSQL\DATA\mastlog.ldf
+
+T:\SQLTempDB\tempdev4.ndf
+
+
+ROLLINS\dbservicedev  Db@sR5ecure  OWSSDDBCLO201
+
+test-netconnection -ComputerName OWSSDDBO234  -Port 5022   
+
+test-netconnection -ComputerName OWSSDDBO235  -Port 5022   
+
+================================================================================
+ddbmsqlrc.exe  -a NSR_DFA_SI_DD_HOST=dd-di-occc-01.rollins.local -a NSR_DFA_SI_DD_USER=sqldevddboost -a NSR_DFA_SI_DEVICE_PATH=/occcsqldev -a "NSR_DFA_SI_DD_LOCKBOX_PATH=C:\Program Files\DPSAPPS\common\lockbox" -a PURGE_DEBUGLOG_DAYS=1 -c owssdvdbago01.rollins.local -a "SKIP_CLIENT_RESOLUTION=TRUE" -C "'ServSuiteWBProgram'='C:\SQLMounts\Data2\SQLData1\ServSuiteWBProgram\ServSuiteWBProgram.mdf', 'ServSuiteWBProgram_log'='C:\SQLMounts\Logs2\SQLLogs1\ServSuiteWBProgram\ServSuiteWBProgram_log.ldf'" -f -t "09/01/2021 06:18:26 PM" -S normal -a "PURGE_DEBUGLOG_DAYS=1" -d MSSQL:ServSuiteWBProgram MSSQL:ServSuiteWBProgram
+================================================================================
+
+================================================================================
+USE [master]
+GO
+DECLARE @returnCode int
+
+
+EXEC   @returnCode = dbo.emc_run_restore ' -a NSR_DFA_SI_DD_HOST=dd-di-occc-01.rollins.local -a NSR_DFA_SI_DD_USER=sqldevddboost -a NSR_DFA_SI_DEVICE_PATH=/occcsqldev -a "NSR_DFA_SI_DD_LOCKBOX_PATH=C:\Program Files\DPSAPPS\common\lockbox" -a PURGE_DEBUGLOG_DAYS=1 -c owssdvdbago01.rollins.local -a "SKIP_CLIENT_RESOLUTION=TRUE" -C "''ServSuiteWBProgram''=''C:\SQLMounts\Data2\SQLData1\ServSuiteWBProgram\ServSuiteWBProgram.mdf'', ''ServSuiteWBProgram_log''=''C:\SQLMounts\Logs2\SQLLogs1\ServSuiteWBProgram\ServSuiteWBProgram_log.ldf''" -f -t "09/01/2021 06:18:26 PM" -S normal -a "PURGE_DEBUGLOG_DAYS=1" -d MSSQL:ServSuiteWBProgram MSSQL:ServSuiteWBProgram'
+IF @returnCode <> 0
+BEGIN
+RAISERROR ('Fail!', 16, 1)
+END
+================================================================================
+
+
+
+Backup databases on OWSSDDBO213 and restore to OWSSDDBO234.
+Copy user Logins from OWSSDDBO224 (OWSSDVDBAGO01) to OWSSDDBO235
+Copy SQL Agent jobs from OWSSDDBO224 to OWSSDDBO235
+Compare SYS.MASTER database on source server to target and script DDL for missing objects.
+
+You can connect to OWSSDDBAGO201 (Always On Listener pointing to Primary),  OWSSDDBO235 (Primary) or OWSSDDBO234(Replica)
+
+Incidents INC0646778 (OWSSDREDO202) and INC0646903 (OWSSRSDBO205) and 

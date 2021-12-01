@@ -1,0 +1,4 @@
+BEGIN
+	Truncate Table DBA.DBO.Staging_eCommerceTransaction;
+	Truncate Table DBA.DBO.Staging_tWebCommerceBasket;
+END;

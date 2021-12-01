@@ -1,0 +1,162 @@
+<html>
+<head>
+<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge' />
+<link rel=stylesheet data-name='vs/editor/editor.main' href='../monaco/editor.main.css' type='text/css'>
+<link rel='stylesheet' type='text/css' href='../css/style.css'></link>
+<script type='text/javascript' src='../js/functions.js'></script>
+<script async='async' type='text/javascript' src='../monaco/sql.js'></script>
+<script src='../monaco/loader.js'></script>
+<script src='../monaco/editor.main.nls.js'></script>
+<script src='../monaco/editor.main.js'></script>
+</head>
+<body class='sql-body' id='scrollable-body'>
+<div id='left-side' class='left-side'><div class='panel'>
+<span class='panel-title source'>&nbsp;Source</span>
+<img tabindex='0' aria-label='Previous problem' role='button' class='nav-button nav-button-disabled' id='source_previous_problem' src='../img/previous_problem.gif' onclick='handleProblemButtonClick(-1, true)' title='Previous problem' />
+<img tabindex='0' aria-label='Next problem' role='button' class='nav-button nav-button-disabled' id='source_next_problem' src='../img/next_problem.gif' onclick='handleProblemButtonClick(1, true)' title='Next problem' />
+<img tabindex='0' aria-label='Previous bookmark' role='button' class='nav-button nav-button-disabled' id='source_previous_bookmark' src='../img/previous_bookmark.gif' onclick='handleBookmarkButtonClick(-1, true)' title='Previous bookmark' />
+<img tabindex='0' aria-label='Next bookmark' role='button' class='nav-button nav-button-disabled' id='source_next_bookmark' src='../img/next_bookmark.gif' onclick='handleBookmarkButtonClick(1, true)' title='Next bookmark' />
+<img tabindex='0' aria-label='Clear bookmarks' role='button' class='nav-button nav-button-disabled' id='source_clear_bookmarks' src='../img/clear_bookmarks.gif' onclick='handleBookmarkButtonClick(0, true)' title='Clear bookmarks' />
+<a class='raw-source-link' target='_blank' aria-label='Raw source' href='./src.sql.txt');'>Raw source</a>
+</div>
+<div class='editor-container'>
+<div id='monaco-left-side'></div><pre id='monaco-left-side-sql'>
+CREATE 
+	VIEW LDATATST.NLSALT4_VIEW (A4_PK_ID, A4_CREATED_TIMESTAMP, A4_CREATED_BY, A4_UPDATED_TIMESTAMP, A4_UPDATED_BY, A4_STATUS, A4_TYPE, A4_LOAN, A4_SEQ, A4_AFFIL_CD, A4_ONLINE_REG, A4_PMT_NTFY_DTE, A4_LIVE_CONTACT_DATE, A4_DELIQUENCY_NOTICE_DATE, A4_OPT_OUT_CODE_01, A4_OPT_OUT_CODE_02, A4_OPT_OUT_CODE_03, A4_OPT_OUT_CODE_04, A4_OPT_OUT_CODE_05, A4_OPT_OUT_CODE_06, A4_OPT_OUT_CODE_07, A4_OPT_OUT_CODE_08, A4_OPT_OUT_CODE_09, A4_OPT_OUT_CODE_10, A4_DEATH_DATE, A4_DEATH_RPT_DATE, A4_DEATH_CERT_DATE)
+		AS 
+			SELECT 
+				ID, 
+				CREATEDTS, 
+				CREATEDBY, 
+				UPDATEDTS, 
+				UPDATEDBY, 
+				STATUS, 
+				TYPE, 
+				A4LOAN, 
+				A4SEQ, 
+				A4AFCD, 
+				A4ERIN, 
+				A4DTPN, 
+				A4CONTDT, 
+				A4DELQDT, 
+				A4OPTOUT01, 
+				A4OPTOUT02, 
+				A4OPTOUT03, 
+				A4OPTOUT04, 
+				A4OPTOUT05, 
+				A4OPTOUT06, 
+				A4OPTOUT07, 
+				A4OPTOUT08, 
+				A4OPTOUT09, 
+				A4OPTOUT10, 
+				A4DEATHDT, 
+				A4DTHRPDT, 
+				A4DTHCTDT
+			FROM LDATATST.NLSALT4;</pre></div></div><div id='resize-bar' class='resize-bar'></div><div id='right-side' class='right-side'><div class='panel'>
+<span class='panel-title target'>&nbsp;Target</span>
+<img tabindex='0' aria-label='Previous problem' role='button' class='nav-button nav-button-disabled' id='target_previous_problem' src='../img/previous_problem.gif' onclick='handleProblemButtonClick(-1, false)' title='Previous problem' />
+<img tabindex='0' aria-label='Next problem' role='button' class='nav-button nav-button-disabled' id='target_next_problem' src='../img/next_problem.gif' onclick='handleProblemButtonClick(1, false)' title='Next problem' />
+<img tabindex='0' aria-label='Previous bookmark' role='button' class='nav-button nav-button-disabled' id='target_previous_bookmark' src='../img/previous_bookmark.gif' onclick='handleBookmarkButtonClick(-1, false)' title='Previous bookmark' />
+<img tabindex='0' aria-label='Next bookmark' role='button' class='nav-button nav-button-disabled' id='target_next_bookmark' src='../img/next_bookmark.gif' onclick='handleBookmarkButtonClick(1, false)' title='Next bookmark' />
+<img tabindex='0' aria-label='Clear bookmarks' role='button' class='nav-button nav-button-disabled' id='target_clear_bookmarks' src='../img/clear_bookmarks.gif' onclick='handleBookmarkButtonClick(0, false)' title='Clear bookmarks' />
+</div>
+<div class='editor-container'>
+<div id='monaco-right-side'></div><pre id='monaco-right-side-sql'>
+/* 
+*   SSMA error messages:
+*   DB22SS0083: Identifier ID cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier CREATEDTS cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier CREATEDBY cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier UPDATEDTS cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier UPDATEDBY cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier STATUS cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier "TYPE" cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier A4LOAN cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier A4SEQ cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier A4AFCD cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier A4ERIN cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier A4DTPN cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier A4CONTDT cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier A4DELQDT cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier A4OPTOUT01 cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier A4OPTOUT02 cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier A4OPTOUT03 cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier A4OPTOUT04 cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier A4OPTOUT05 cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier A4OPTOUT06 cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier A4OPTOUT07 cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier A4OPTOUT08 cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier A4OPTOUT09 cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier A4OPTOUT10 cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier A4DEATHDT cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier A4DTHRPDT cannot be converted because it was not resolved.
+*   DB22SS0083: Identifier A4DTHCTDT cannot be converted because it was not resolved.
+
+CREATE VIEW LDATATST.NLSALT4_VIEW (
+	A4_PK_ID, 
+	A4_CREATED_TIMESTAMP, 
+	A4_CREATED_BY, 
+	A4_UPDATED_TIMESTAMP, 
+	A4_UPDATED_BY, 
+	A4_STATUS, 
+	A4_TYPE, 
+	A4_LOAN, 
+	A4_SEQ, 
+	A4_AFFIL_CD, 
+	A4_ONLINE_REG, 
+	A4_PMT_NTFY_DTE, 
+	A4_LIVE_CONTACT_DATE, 
+	A4_DELIQUENCY_NOTICE_DATE, 
+	A4_OPT_OUT_CODE_01, 
+	A4_OPT_OUT_CODE_02, 
+	A4_OPT_OUT_CODE_03, 
+	A4_OPT_OUT_CODE_04, 
+	A4_OPT_OUT_CODE_05, 
+	A4_OPT_OUT_CODE_06, 
+	A4_OPT_OUT_CODE_07, 
+	A4_OPT_OUT_CODE_08, 
+	A4_OPT_OUT_CODE_09, 
+	A4_OPT_OUT_CODE_10, 
+	A4_DEATH_DATE, 
+	A4_DEATH_RPT_DATE, 
+	A4_DEATH_CERT_DATE)
+AS 
+	SELECT 
+		ID, 
+		CREATEDTS, 
+		CREATEDBY, 
+		UPDATEDTS, 
+		UPDATEDBY, 
+		STATUS, 
+		TYPE, 
+		A4LOAN, 
+		A4SEQ, 
+		A4AFCD, 
+		A4ERIN, 
+		A4DTPN, 
+		A4CONTDT, 
+		A4DELQDT, 
+		A4OPTOUT01, 
+		A4OPTOUT02, 
+		A4OPTOUT03, 
+		A4OPTOUT04, 
+		A4OPTOUT05, 
+		A4OPTOUT06, 
+		A4OPTOUT07, 
+		A4OPTOUT08, 
+		A4OPTOUT09, 
+		A4OPTOUT10, 
+		A4DEATHDT, 
+		A4DTHRPDT, 
+		A4DTHCTDT
+	FROM LDATATST.NLSALT4
+GO
+*/
+
+</pre></div></div><script>
+var sourceLanguage = 'sql';
+var sourceEditorSelections = [{start:512, end:955, guid:'32ab717c-3129-47a8-88ea-62d22c1ae6ff', reflection:['e2a4857a-a466-4767-b64c-8e15da2a0ceb'], convmessInfoIds:[], convmessWarningIds:[], convmessErrorIds:[]},{start:0, end:956, guid:'a7ca664c-ee6e-4a32-b2b8-55651be59cc2', reflection:['5c9dcef8-3ef9-44b1-9459-58bad8bea14a'], convmessInfoIds:[], convmessWarningIds:[], convmessErrorIds:[]}];
+var targetLanguage = 'sql';
+var targetEditorSelections = [{start:2893, end:3278, guid:'e2a4857a-a466-4767-b64c-8e15da2a0ceb', reflection:['32ab717c-3129-47a8-88ea-62d22c1ae6ff'], convmessInfoIds:[], convmessWarningIds:[], convmessErrorIds:[]},{start:2331, end:3278, guid:'5c9dcef8-3ef9-44b1-9459-58bad8bea14a', reflection:['a7ca664c-ee6e-4a32-b2b8-55651be59cc2'], convmessInfoIds:[], convmessWarningIds:[], convmessErrorIds:[]},{start:0, end:3286, guid:'2ff1c947-9ef0-49eb-badb-fd1f282f63e4', reflection:[], convmessInfoIds:[], convmessWarningIds:[], convmessErrorIds:['DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083','DB22SS0083']}];
+</script><script src='../js/code.js'></script></body></html>
